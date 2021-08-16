@@ -1,0 +1,124 @@
+{
+  "name": "@flex-development/autoreview",
+  "description": "GitHub Action to automate pull request reviews",
+  "version": "1.0.0",
+  "keywords": [
+    "automation",
+    "github actions",
+    "github automation",
+    "pull request reviews",
+    "pull requests"
+  ],
+  "homepage": "https://github.com/flex-development/autoreview",
+  "repository": "git://github.com/flex-development/autoreview.git",
+  "bugs": {
+    "url": "https://github.com/flex-development/autoreview/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Lexus Drumgold",
+    "url": "https://github.com/unicornware"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "./build"
+  },
+  "files": [
+    "build",
+    "dist",
+    "src",
+    "CONTRIBUTING.md"
+  ],
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "postinstall": "husky-run install",
+    "bootstrap": "yarn; yarn prepare",
+    "check:format": "prettier --check .",
+    "check:style": "eslint . --ext md,js,ts",
+    "fix:format": "prettier --write .",
+    "fix:style": "yarn check:style --fix --cache",
+    "build": "dotenv -c production -- ts-node ./scripts/build",
+    "prepack": "yarn build"
+  },
+  "dependencies": {
+    "@actions/core": "1.4.0",
+    "@actions/github": "5.0.0",
+    "@flex-development/exceptions": "2.0.1",
+    "@flex-development/tutils": "3.1.0",
+    "class-validator": "0.13.1",
+    "lodash.merge": "4.6.2",
+    "reflect-metadata": "0.1.13"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.14.7",
+    "@commitlint/cli": "13.0.0",
+    "@commitlint/config-conventional": "13.0.0",
+    "@commitlint/format": "13.0.0",
+    "@flex-development/grease": "1.0.0",
+    "@types/faker": "5.5.6",
+    "@types/fs-extra": "9.0.11",
+    "@types/jest": "26.0.23",
+    "@types/lodash.merge": "4.6.6",
+    "@types/lodash.omit": "4.5.6",
+    "@types/mvdan-sh": "0.5.0",
+    "@types/node": "15.12.5",
+    "@types/rimraf": "2.0.4",
+    "@types/shelljs": "0.8.9",
+    "@typescript-eslint/eslint-plugin": "4.28.0",
+    "@typescript-eslint/parser": "4.28.0",
+    "@vercel/ncc": "0.29.1",
+    "@zerollup/ts-transform-paths": "1.7.18",
+    "dotenv-cli": "4.0.0",
+    "eslint": "7.29.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jest": "24.3.6",
+    "eslint-plugin-jsdoc": "36.0.6",
+    "eslint-plugin-markdown": "2.2.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-spellcheck": "0.0.19",
+    "eslint-plugin-tree-shaking": "1.9.2",
+    "faker": "5.5.3",
+    "fs-extra": "10.0.0",
+    "husky": "4.3.8",
+    "jest": "27.0.6",
+    "jest-extended": "0.11.5",
+    "jest-mock-console": "1.1.0",
+    "lint-staged": "11.0.0",
+    "mkdirp": "0.5.5",
+    "npm": "7.19.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.2",
+    "prettier-plugin-sh": "0.7.0",
+    "printf": "0.6.1",
+    "replace-in-file": "6.2.0",
+    "rimraf": "3.0.2",
+    "shelljs": "0.8.4",
+    "ts-jest": "27.0.4",
+    "ts-node": "10.1.0",
+    "tsconfig-paths": "3.9.0",
+    "ttypescript": "1.5.12",
+    "typescript": "4.3.4"
+  },
+  "engines": {
+    "node": ">=9.0.0",
+    "yarn": "3.0.0-rc.2"
+  },
+  "resolutions": {
+    "lodash.omit": "4.5.0",
+    "read-pkg": "5.2.0"
+  },
+  "env": {
+    "optional": [
+      "DEBUG",
+      "DEBUG_COLORS"
+    ],
+    "required": [
+      "PAT_GPR_FLDV"
+    ]
+  },
+  "private": true
+}
