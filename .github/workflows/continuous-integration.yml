@@ -36,7 +36,7 @@ jobs:
       - name: Check code formatting
         run: yarn check:format
       - name: Check code style
-        run: yarn check:style
+        run: yarn check:style --max-warnings 0
       - name: Run test suites
         run: TERM=xterm-256color yarn test --ci
       - name: Build project
