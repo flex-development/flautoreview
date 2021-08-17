@@ -685,6 +685,7 @@ __metadata:
     "@flex-development/exceptions": 2.0.1
     "@flex-development/grease": 1.0.0
     "@flex-development/tutils": 3.1.0
+    "@octokit/webhooks-types": 4.3.0
     "@types/faker": 5.5.6
     "@types/fs-extra": 9.0.11
     "@types/jest": 26.0.23
@@ -1480,6 +1481,13 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^9.5.0
   checksum: aaaceb38e0750e750feb5a980c03da78e068f50b068371c132e18ab89a0c268482e6dbc327f1a0ea6ec7674906986d7b49bd132cdae9641d4be4ce13cf407435
+  languageName: node
+  linkType: hard
+
+"@octokit/webhooks-types@npm:4.3.0":
+  version: 4.3.0
+  resolution: "@octokit/webhooks-types@npm:4.3.0"
+  checksum: 16de653b8d1fa5fa334a42b273cc99304e3dcacd1d41c76fd03e21d8e094e64fc544b865d33ae3366d0b79314a43880856c130cbc136de74cf40faec4ecfe70b
   languageName: node
   linkType: hard
 

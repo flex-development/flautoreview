@@ -113,6 +113,7 @@ const RULES = {
       skipWordIfMatch: [],
       skipWords: [
         'argv',
+        'automatable',
         'autoreview',
         'commitlint',
         'dependabot',
@@ -135,6 +136,7 @@ const RULES = {
         'typeof',
         'unicornware',
         'usr',
+        'webhook',
         'wip'
       ],
       strings: true

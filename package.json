@@ -49,6 +49,7 @@
     "@actions/github": "5.0.0",
     "@flex-development/exceptions": "2.0.1",
     "@flex-development/tutils": "3.1.0",
+    "@octokit/webhooks-types": "4.3.0",
     "class-transformer": "0.4.0",
     "class-transformer-validator": "0.9.1",
     "class-validator": "0.13.1",
