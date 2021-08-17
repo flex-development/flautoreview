@@ -115,8 +115,10 @@ const RULES = {
         'argv',
         'autoreview',
         'commitlint',
+        'dependabot',
         'enum',
         'enums',
+        'flexdevelopment',
         'formatter',
         'keyof',
         'ncc',
@@ -129,6 +131,7 @@ const RULES = {
         'ttsc',
         'txt',
         'typeof',
+        'unicornware',
         'usr',
         'wip'
       ],
