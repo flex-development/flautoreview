@@ -23,6 +23,7 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ['node', 'js', 'json', 'ts'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
   prettierPath: '<rootDir>/node_modules/prettier',
+  reporters: ['default', 'jest-github-reporter'],
   roots: ['<rootDir>/__mocks__', '<rootDir>/packages'],
   setupFiles: ['<rootDir>/__tests__/config/setup.ts'],
   setupFilesAfterEnv: [
