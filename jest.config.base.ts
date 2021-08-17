@@ -10,7 +10,6 @@ import { compilerOptions } from './tsconfig.json'
  */
 
 const TYPE = 'e2e|functional|integration'
-const prefix = '<rootDir>'
 
 const config: Config.InitialOptions = {
   ...preset,
@@ -22,16 +21,16 @@ const config: Config.InitialOptions = {
   },
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['node', 'js', 'json', 'ts'],
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix }),
-  prettierPath: `${prefix}/node_modules/prettier`,
-  rootDir: '../..',
-  roots: [`${prefix}/__mocks__`, `${prefix}/packages`],
-  setupFiles: [`${prefix}/__tests__/config/setup.ts`],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+  prettierPath: '<rootDir>/node_modules/prettier',
+  roots: ['<rootDir>/__mocks__', '<rootDir>/packages'],
+  setupFiles: ['<rootDir>/__tests__/config/setup.ts'],
   setupFilesAfterEnv: [
     'jest-mock-console/dist/setupTestFramework.js',
-    `${prefix}/__tests__/config/setupAfterEnv.ts`
+    '<rootDir>/__tests__/config/setupAfterEnv.ts'
   ],
   testRegex: `(/__tests__/)(spec/(${TYPE}))?(.*)(${TYPE})?.spec.ts$`,
+  testRunner: 'jest-jasmine2',
   verbose: true
 }
 

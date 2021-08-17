@@ -126,6 +126,7 @@ const RULES = {
         'nullish',
         'perf',
         'postbuild',
+        'readonly',
         'rimraf',
         'tgz',
         'tsconfig',

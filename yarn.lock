@@ -698,6 +698,7 @@ __metadata:
     "@typescript-eslint/parser": 4.28.0
     "@vercel/ncc": 0.29.1
     "@zerollup/ts-transform-paths": 1.7.18
+    class-transformer: 0.4.0
     class-validator: 0.13.1
     dotenv-cli: 4.0.0
     eslint: 7.29.0
