@@ -113,13 +113,24 @@ const RULES = {
       skipWordIfMatch: [],
       skipWords: [
         'argv',
+        'autoreview',
         'commitlint',
-        'formatter',
         'enum',
-        'keyof'
+        'enums',
+        'formatter',
+        'keyof',
+        'ncc',
+        'nullish',
+        'perf',
+        'postbuild',
+        'rimraf',
+        'tgz',
         'tsconfig',
         'ttsc',
-        'typeof'
+        'txt',
+        'typeof',
+        'usr',
+        'wip'
       ],
       strings: true
     }
