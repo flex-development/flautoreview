@@ -1,4 +1,4 @@
-const { Rule, RuleConfigTuple } = require('@commitlint/types')
+const { Rule } = require('@commitlint/types')
 const { Record } = require('typescript')
 
 /**
