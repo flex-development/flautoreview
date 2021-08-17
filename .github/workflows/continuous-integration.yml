@@ -12,7 +12,7 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     env:
-      PAT_GPR: ${{ secrets.PAT_GPR }}
+      PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
     strategy:
       matrix:
         node: ['15', '16']
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: yarn
         env:
-          NODE_AUTH_TOKEN: ${PAT_GPR}
+          NODE_AUTH_TOKEN: ${PAT_GPR_FLDV}
       - name: Check code formatting
         run: yarn check:format
       - name: Check code style

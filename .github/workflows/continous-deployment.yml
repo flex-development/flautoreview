@@ -17,7 +17,7 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     env:
-      PAT_GPR: ${{ secrets.PAT_GPR }}
+      PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: yarn
         env:
-          NODE_AUTH_TOKEN: ${PAT_GPR}
+          NODE_AUTH_TOKEN: ${PAT_GPR_FLDV}
       - name: Run test suites
         run: TERM=xterm-256color yarn test --ci
       - name: Get release info
