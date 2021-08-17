@@ -23,15 +23,16 @@ const config: Config.InitialOptions = {
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['node', 'js', 'json', 'ts'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix }),
-  prettierPath: `${prefix}/node_modules/prettier`,
-  rootDir: '../..',
-  roots: [`${prefix}/__mocks__`, `${prefix}/packages`],
-  setupFiles: [`${prefix}/__tests__/config/setup.ts`],
+  prettierPath: '<rootDir>/node_modules/prettier',
+  reporters: ['default', 'jest-github-reporter'],
+  roots: ['<rootDir>/__mocks__', '<rootDir>/src'],
+  setupFiles: ['<rootDir>/__tests__/config/setup.ts'],
   setupFilesAfterEnv: [
     'jest-mock-console/dist/setupTestFramework.js',
-    `${prefix}/__tests__/config/setupAfterEnv.ts`
+    '<rootDir>/__tests__/config/setupAfterEnv.ts'
   ],
   testRegex: `(/__tests__/)(spec/(${TYPE}))?(.*)(${TYPE})?.spec.ts$`,
+  testRunner: 'jest-jasmine2',
   verbose: true
 }
 

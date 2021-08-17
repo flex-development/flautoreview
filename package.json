@@ -40,6 +40,7 @@
     "check:style": "eslint . --ext md,js,ts",
     "fix:format": "prettier --write .",
     "fix:style": "yarn check:style --fix --cache",
+    "test": "bash ./scripts/jest.sh",
     "build": "dotenv -c production -- ts-node ./scripts/build",
     "prepack": "yarn build"
   },
@@ -48,6 +49,8 @@
     "@actions/github": "5.0.0",
     "@flex-development/exceptions": "2.0.1",
     "@flex-development/tutils": "3.1.0",
+    "class-transformer": "0.4.0",
+    "class-transformer-validator": "0.9.1",
     "class-validator": "0.13.1",
     "lodash.merge": "4.6.2",
     "reflect-metadata": "0.1.13"
@@ -87,6 +90,7 @@
     "husky": "4.3.8",
     "jest": "27.0.6",
     "jest-extended": "0.11.5",
+    "jest-github-reporter": "1.0.2",
     "jest-mock-console": "1.1.0",
     "lint-staged": "11.0.0",
     "mkdirp": "0.5.5",

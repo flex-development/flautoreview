@@ -10,8 +10,7 @@ import pkg from './package.json'
  */
 
 const config: Config.InitialOptions = merge(omit(baseConfig, ['rootDir']), {
-  displayName: pkg.name.split('/')[1],
-  projects: ['<rootDir>/packages/*/jest.config.ts']
+  displayName: pkg.name.split('/')[1]
 })
 
 export default config
