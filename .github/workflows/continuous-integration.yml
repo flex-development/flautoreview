@@ -12,6 +12,7 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     env:
+      NODE_OPTIONS: -r tsconfig-paths/register
       PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
     strategy:
       matrix:

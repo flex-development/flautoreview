@@ -17,6 +17,7 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     env:
+      NODE_OPTIONS: -r tsconfig-paths/register
       PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
     steps:
       - name: Checkout branch
