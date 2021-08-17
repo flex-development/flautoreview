@@ -122,16 +122,20 @@
 # Scope labels
 # Project-specific groups for issues, pull requests, and discussions.
 
-- name: scope:deploy
-  description: Package deployment tasks
+- name: scope:action
+  description: GitHub Action development
+  color: 74cefc
+
+- name: scope:deploy-release
+  description: Package deployment and release tasks
   color: 74cefc
 
 - name: scope:deps
   description: Dependency updates
   color: 74cefc
 
-- name: scope:release
-  description: Package release tasks
+- name: scope:errors
+  description: Exceptions and exception handling
   color: 74cefc
 
 - name: scope:scripts
@@ -144,4 +148,12 @@
 
 - name: scope:typescript
   description: TypeScript support (enums, interfaces, types)
+  color: 74cefc
+
+- name: scope:utils
+  description: Utilities
+  color: 74cefc
+
+- name: scope:validation
+  description: Validation API
   color: 74cefc
