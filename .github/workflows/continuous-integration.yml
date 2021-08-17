@@ -12,7 +12,6 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: -r tsconfig-paths/register
       PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
     strategy:
       matrix:
@@ -42,3 +41,5 @@ jobs:
         run: TERM=xterm-256color yarn test --ci
       - name: Build project
         run: yarn build
+        env:
+          NODE_OPTIONS: -r tsconfig-paths/register
