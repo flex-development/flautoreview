@@ -118,6 +118,7 @@ const RULES = {
         'dependabot',
         'enum',
         'enums',
+        'dtos',
         'flexdevelopment',
         'formatter',
         'keyof',
