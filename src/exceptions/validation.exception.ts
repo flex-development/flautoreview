@@ -1,3 +1,4 @@
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import { ExceptionStatusCode as Code } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
@@ -47,6 +48,7 @@ export default class ValidationException extends Exception {
   ) {
     super(Code.BAD_REQUEST, '', data, (error as Error)?.stack)
 
+    this.data.level = ExceptionLevel.ERROR
     this.model = model
 
     if (Array.isArray(error)) {

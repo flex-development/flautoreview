@@ -1,5 +1,6 @@
 import github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'
 import type { WebhookPayloadReviewRequested } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
@@ -39,6 +40,7 @@ describe('unit:utils/createReview', () => {
     expect(exception).toMatchObject({
       code: REQUEST_ERROR.status,
       data: {
+        level: ExceptionLevel.ERROR,
         request: REQUEST_ERROR.request,
         response: REQUEST_ERROR.response
       },
@@ -56,6 +58,7 @@ describe('unit:utils/createReview', () => {
       {
         expected: {
           code: ExceptionStatusCode.PRECONDITION_FAILED,
+          data: { level: ExceptionLevel.WARN },
           errors: { reviewers: 'user' },
           message: `${USER.requested_reviewer.login} cannot automate reviews`
         },
@@ -66,6 +69,7 @@ describe('unit:utils/createReview', () => {
       {
         expected: {
           code: ExceptionStatusCode.PRECONDITION_FAILED,
+          data: { level: ExceptionLevel.WARN },
           errors: { senders: 'senders' },
           message: `${USER.sender.login} cannot receive automated reviews`
         },

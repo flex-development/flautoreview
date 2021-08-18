@@ -1,3 +1,4 @@
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { WebhookPayload } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
@@ -20,6 +21,7 @@ describe('unit:utils/automatable', () => {
       {
         expected: {
           code: ExceptionStatusCode.NOT_FOUND,
+          data: { level: ExceptionLevel.ERROR },
           errors: { pull_request: null },
           message: 'Missing pull_request data from webhook payload'
         },
@@ -29,6 +31,7 @@ describe('unit:utils/automatable', () => {
       {
         expected: {
           code: ExceptionStatusCode.NOT_FOUND,
+          data: { level: ExceptionLevel.ERROR },
           errors: { action: 'review_request_removed' },
           message: `Review request not found for pull #${pull_request.number}`
         },
@@ -38,6 +41,7 @@ describe('unit:utils/automatable', () => {
       {
         expected: {
           code: ExceptionStatusCode.BAD_REQUEST,
+          data: { level: ExceptionLevel.ERROR },
           errors: { pull_request: { state: 'closed' } },
           message: `Pull #${pull_request.number} is closed`
         },

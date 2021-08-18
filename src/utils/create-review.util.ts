@@ -1,5 +1,6 @@
 import github from '@actions/github'
 import DEFAULT_INPUTS from '@autoreview/config/defaults.config'
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'
 import type { WebhookPayloadReviewRequested } from '@autoreview/types'
 import { CreateReviewResponse } from '@autoreview/types'
@@ -42,6 +43,7 @@ const createReview = async (
     if (!reviewer) {
       throw new Exception(ExceptionStatusCode.PRECONDITION_FAILED, undefined, {
         errors: { reviewers },
+        level: ExceptionLevel.WARN,
         message: `${requested} cannot automate reviews`
       })
     }
@@ -53,6 +55,7 @@ const createReview = async (
     if (senders && !sender) {
       throw new Exception(ExceptionStatusCode.PRECONDITION_FAILED, undefined, {
         errors: { senders },
+        level: ExceptionLevel.WARN,
         message: `${payload.sender.login} cannot receive automated reviews`
       })
     }
@@ -73,7 +76,11 @@ const createReview = async (
 
     const { message, request, response, status } = error as RequestError
 
-    throw new Exception(status, message, { request, response })
+    throw new Exception(status, message, {
+      level: ExceptionLevel.ERROR,
+      request,
+      response
+    })
   }
 }
 

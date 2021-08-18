@@ -1,3 +1,4 @@
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { WebhookPayload } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
@@ -28,6 +29,7 @@ const automatable = (payload: WebhookPayload): true => {
   if (!pull_request) {
     const data = {
       errors: { pull_request: null },
+      level: ExceptionLevel.ERROR,
       message: 'Missing pull_request data from webhook payload'
     }
 
@@ -37,6 +39,7 @@ const automatable = (payload: WebhookPayload): true => {
   if (action !== 'review_requested') {
     const data = {
       errors: { action },
+      level: ExceptionLevel.ERROR,
       message: `Review request not found for pull #${pull_request.number}`
     }
 
@@ -46,6 +49,7 @@ const automatable = (payload: WebhookPayload): true => {
   if (pull_request.state === 'closed') {
     const data = {
       errors: { pull_request: { state: pull_request.state } },
+      level: ExceptionLevel.ERROR,
       message: `Pull #${pull_request.number} is closed`
     }
 
