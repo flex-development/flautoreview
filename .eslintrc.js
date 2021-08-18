@@ -125,6 +125,7 @@ const RULES = {
         'keyof',
         'ncc',
         'nullish',
+        'octokit',
         'perf',
         'postbuild',
         'readonly',
@@ -137,6 +138,7 @@ const RULES = {
         'unicornware',
         'usr',
         'webhook',
+        'webhooks',
         'wip'
       ],
       strings: true

@@ -4,3 +4,4 @@
  */
 
 export * from './validation.types'
+export * from './webhooks.types'

@@ -1,4 +1,4 @@
-import type { PullRequestReviewRequestedEvent } from '@octokit/webhooks-types'
+import type { WebhookPayloadReviewRequestedTeam } from '@autoreview/types'
 import faker from 'faker'
 
 /**
@@ -626,4 +626,4 @@ export default {
     type: 'User',
     url: 'https://api.github.com/users/unicornware'
   }
-} as PullRequestReviewRequestedEvent
+} as WebhookPayloadReviewRequestedTeam
