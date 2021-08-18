@@ -1,7 +1,7 @@
-import type { PullRequestReviewRequestedEvent } from '@octokit/webhooks-types'
-import REVIEWER from '@tests/fixtures/pr-event-with-requested-reviewer.fixture'
+import type { WebhookPayloadReviewRequested } from '@autoreview/types'
+import USER from '@tests/fixtures/pr-event-with-requested-reviewer.fixture'
 import TEAM from '@tests/fixtures/pr-event-with-requested-team.fixture'
-import { Testcase } from '@tests/utils/types'
+import type { Testcase } from '@tests/utils/types'
 import testSubject from '../get-requested.util'
 
 /**
@@ -11,14 +11,14 @@ import testSubject from '../get-requested.util'
 
 describe('unit:utils/getRequested', () => {
   type Case = Testcase<string> & {
-    payload: PullRequestReviewRequestedEvent
+    payload: WebhookPayloadReviewRequested
     property: 'requested_reviewer.login' | 'requested_team.slug'
   }
 
   const cases: Case[] = [
     {
-      expected: REVIEWER.requested_reviewer.login,
-      payload: REVIEWER,
+      expected: USER.requested_reviewer.login,
+      payload: USER,
       property: 'requested_reviewer.login'
     },
     {

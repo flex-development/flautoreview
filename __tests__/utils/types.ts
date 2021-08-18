@@ -1,3 +1,5 @@
+import type { ExceptionJSON } from '@flex-development/exceptions/interfaces'
+
 /**
  * @file Test Utilities - Type Definitions
  * @module tests/types
@@ -48,4 +50,11 @@ export interface Testcase<Expected extends any = any> {
  */
 export interface TestcaseCalled extends Testcase<number> {
   call: 'call' | 'not call'
+}
+
+/**
+ * Represents a `@throws` test case.
+ */
+export interface TestcaseThrows extends Testcase<Partial<ExceptionJSON>> {
+  failure: string
 }

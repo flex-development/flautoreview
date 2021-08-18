@@ -1,6 +1,6 @@
 import { ReviewEvent } from '@autoreview/enums/review-event.enum'
 import type { Inputs } from '@autoreview/interfaces'
-import { IsEnum, IsOptional, IsString } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 
 /**
  * @file Data Transfer Objects - InputsDTO
@@ -14,6 +14,7 @@ import { IsEnum, IsOptional, IsString } from 'class-validator'
  */
 export default class InputsDTO implements Inputs {
   @IsString()
+  @IsNotEmpty()
   @IsOptional()
   body?: Inputs['body']
 
@@ -22,10 +23,16 @@ export default class InputsDTO implements Inputs {
   event?: Inputs['event']
 
   @IsString()
+  @IsNotEmpty()
   @IsOptional()
-  reviewers?: string
+  reviewers?: Inputs['reviewers']
 
   @IsString()
+  @IsNotEmpty()
   @IsOptional()
-  senders?: string
+  senders?: Inputs['senders']
+
+  @IsString()
+  @IsNotEmpty()
+  token: Inputs['token']
 }

@@ -1,10 +1,7 @@
+import type { WebhookPayload } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
-import type {
-  PullRequestEvent,
-  PullRequestReviewRequestedEvent as Automatable,
-  Schema as WebhookPayload
-} from '@octokit/webhooks-types'
+import type { PullRequestEvent } from '@octokit/webhooks-definitions/schema'
 
 /**
  * @file Utility - automatable
@@ -25,7 +22,7 @@ import type {
  * @return {boolean} `true` if review submission is automatable
  * @throws {Exception}
  */
-const automatable = (payload: WebhookPayload): payload is Automatable => {
+const automatable = (payload: WebhookPayload): true => {
   const { action, pull_request } = payload as PullRequestEvent
 
   if (!pull_request) {

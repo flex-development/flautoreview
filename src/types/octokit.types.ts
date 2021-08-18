@@ -1,3 +1,4 @@
+import type { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-methods'
 import type {
   InstallationLite,
   Organization,
@@ -5,12 +6,28 @@ import type {
   Repository,
   Team,
   User
-} from '@octokit/webhooks-types'
+} from '@octokit/webhooks-definitions/schema'
 
 /**
- * @file Type Definitions - Webhooks
- * @module autoreview/types/webhooks
+ * @file Type Definitions - Octokit
+ * @module autoreview/types/octokit
  */
+
+/**
+ * Object representing `200 OK` response after creating a pull request review.
+ */
+export type CreateReviewResponse =
+  RestEndpointMethodTypes['pulls']['createReview']['response']
+
+/**
+ * Object representing a webhook payload [pull_request][1] when a review is
+ * requested from a user or team.
+ *
+ * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+ */
+export type WebhookPayloadReviewRequested =
+  | WebhookPayloadReviewRequestedTeam
+  | WebhookPayloadReviewRequestedUser
 
 /**
  * Object representing a webhook payload [pull_request][1] when a review is
@@ -46,8 +63,5 @@ export type WebhookPayloadReviewRequestedUser = {
   sender: User
 }
 
-// Rename `@octokit/webhooks-types` type definitions
-export type {
-  PullRequestReviewRequestedEvent as WebhookPayloadReviewRequested,
-  Schema as WebhookPayload
-} from '@octokit/webhooks-types'
+// Rename `@octokit/webhooks-definitions/schema` type definitions
+export type { Schema as WebhookPayload } from '@octokit/webhooks-definitions/schema'

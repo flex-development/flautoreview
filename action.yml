@@ -26,7 +26,7 @@ inputs:
     required: false
   senders:
     description: |
-      list of review requesters allowed to receive automated reviews
+      list of review requesters allowed to request automated reviews
       e.g: 'unicornware,privilegeduser'
     required: false
 runs:

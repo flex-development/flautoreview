@@ -1,4 +1,4 @@
-import { TVO_DEFAULTS } from '@autoreview/config/constants.config'
+import { DEFAULT_TVO } from '@autoreview/config/constants.config'
 import ValidationException from '@autoreview/exceptions/validation.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
 import { classToPlain } from 'class-transformer'
@@ -42,7 +42,7 @@ function validate<T extends ObjectPlain = ObjectPlain>(
   options: TransformValidationOptions = {},
   data: ObjectPlain = {}
 ): T {
-  options = merge({ ...TVO_DEFAULTS }, options)
+  options = merge({ ...DEFAULT_TVO }, options)
 
   try {
     value = transformAndValidateSync(Model, value, options)

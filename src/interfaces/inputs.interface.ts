@@ -38,4 +38,9 @@ export interface Inputs {
    * List of users allowed to receive automated reviews e.g: `'unicornware'`.
    */
   senders?: string
+
+  /**
+   * GitHub [Personal Access Token][1] with repository access.
+   */
+  token: string
 }
