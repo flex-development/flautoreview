@@ -1,3 +1,4 @@
+import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import ERROR from '@tests/fixtures/error.fixture'
 import VALIDATION_ERRORS from '@tests/fixtures/validation-errors.fixture'
@@ -21,7 +22,7 @@ describe('unit:exceptions/ValidationException', () => {
       // Expect
       expect(exception).toMatchObject({
         code: ExceptionStatusCode.BAD_REQUEST,
-        data,
+        data: { ...data, level: ExceptionLevel.ERROR },
         errors: [],
         message: ERROR.message
       })
@@ -36,7 +37,7 @@ describe('unit:exceptions/ValidationException', () => {
       expect(exception.message).toMatch(/(validation failure: )\[([a-z])\w+/)
       expect(exception).toMatchObject({
         code: ExceptionStatusCode.BAD_REQUEST,
-        data,
+        data: { ...data, level: ExceptionLevel.ERROR },
         errors: VALIDATION_ERRORS
       })
     })

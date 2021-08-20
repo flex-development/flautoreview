@@ -1,6 +1,6 @@
 import { ReviewEvent } from '@autoreview/enums/review-event.enum'
 import type { Inputs } from '@autoreview/interfaces'
-import { IsEnum, IsOptional, IsString } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 
 /**
  * @file Data Transfer Objects - InputsDTO
@@ -13,7 +13,19 @@ import { IsEnum, IsOptional, IsString } from 'class-validator'
  * @implements {Inputs}
  */
 export default class InputsDTO implements Inputs {
+  /**
+   * @property {(keyof Inputs)[]} PROPS - Data transfer object property names
+   */
+  static PROPS: (keyof Inputs)[] = [
+    'body',
+    'event',
+    'reviewers',
+    'senders',
+    'token'
+  ]
+
   @IsString()
+  @IsNotEmpty()
   @IsOptional()
   body?: Inputs['body']
 
@@ -23,9 +35,13 @@ export default class InputsDTO implements Inputs {
 
   @IsString()
   @IsOptional()
-  reviewers?: string
+  reviewers?: Inputs['reviewers']
 
   @IsString()
   @IsOptional()
-  senders?: string
+  senders?: Inputs['senders']
+
+  @IsString()
+  @IsNotEmpty({ message: 'GitHub personal access token required' })
+  token: Inputs['token']
 }

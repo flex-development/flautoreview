@@ -49,10 +49,12 @@
     "@actions/github": "5.0.0",
     "@flex-development/exceptions": "2.0.1",
     "@flex-development/tutils": "3.1.0",
+    "@octokit/webhooks-definitions": "3.67.3",
     "class-transformer": "0.4.0",
     "class-transformer-validator": "0.9.1",
     "class-validator": "0.13.1",
     "lodash.merge": "4.6.2",
+    "lodash.pick": "4.4.0",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
@@ -66,6 +68,7 @@
     "@types/jest": "26.0.23",
     "@types/lodash.merge": "4.6.6",
     "@types/lodash.omit": "4.5.6",
+    "@types/lodash.pick": "4.4.6",
     "@types/mvdan-sh": "0.5.0",
     "@types/node": "15.12.5",
     "@types/rimraf": "2.0.4",

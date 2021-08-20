@@ -6,10 +6,10 @@ import type { TVODefaults } from '@autoreview/types'
  */
 
 /**
- * @property {TVODefaults} TVO_DEFAULTS - `class-transformer-validator` options
+ * @property {TVODefaults} DEFAULT_TVO - `class-transformer-validator` options
  * @see https://github.com/MichalLytek/class-transformer-validator
  */
-export const TVO_DEFAULTS: TVODefaults = Object.freeze({
+export const DEFAULT_TVO: TVODefaults = Object.freeze({
   transformer: {},
   validator: {
     enableDebugMessages: true,

@@ -12,5 +12,10 @@ module.exports = {
   /**
    * Formatting and linting commands for JavaScript and TypeScript files.
    */
-  [`*.{js,md,ts}`]: ['yarn fix:style', 'git add -A']
+  [`*.{js,md,ts}`]: ['yarn fix:style', 'git add -A'],
+
+  /**
+   * Rebuild project.
+   */
+  'src/*': ['yarn build --bundle', 'git add dist']
 }
