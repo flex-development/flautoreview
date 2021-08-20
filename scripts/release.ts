@@ -135,7 +135,6 @@ const options: IGreaseOptions = {
     prerelease: 'yarn test --no-cache'
   },
   skipUnstable: false,
-  tagPrefix: `${$name_no_scope}@`,
   types: [
     /* eslint-disable sort-keys */
     { type: 'feat', section: ':sparkles: Features' },
