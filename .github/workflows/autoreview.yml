@@ -1,0 +1,24 @@
+# Automate Pull Request Reviews
+#
+# References:
+#
+# - https://github.com/flex-development/autoreview
+
+---
+name: Autoreview
+on:
+  pull_request:
+    types: [review_requested]
+jobs:
+  autoreview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Automate reviews
+        uses: ./
+        with:
+          body: lgtm 👍🏾
+          reviewers: flexdevelopment
+          senders: unicornware
+          token: ${{ secrets.PAT_REPO_ADMIN }}

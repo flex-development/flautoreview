@@ -10,7 +10,8 @@ author: '@flex-development'
 inputs:
   body:
     description: |
-      body text of pull request review. required when using COMMENT or REQUEST_CHANGES for the event input
+      body text of pull request review.
+      required when using COMMENT or REQUEST_CHANGES for the event input
     required: false
   event:
     default: APPROVE
@@ -31,7 +32,9 @@ inputs:
   token:
     default: ${{ github.token }}
     description: |
-      Personal access token (PAT) used to create automated pull request review
+      personal access token (PAT) used to create automated pull request review.
+      using the default github token will result in the github-actions bot
+      submitting reviews instead of the user or team listed in reviewers
     required: true
 runs:
   main: dist/index.js

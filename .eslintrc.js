@@ -133,6 +133,7 @@ const RULES = {
         'postbuild',
         'readonly',
         'rimraf',
+        'stringified',
         'tgz',
         'tsconfig',
         'ttsc',

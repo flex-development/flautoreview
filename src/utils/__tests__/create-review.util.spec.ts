@@ -1,4 +1,4 @@
-import github from '@actions/github'
+import * as github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'

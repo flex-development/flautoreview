@@ -43,16 +43,6 @@ export interface Testcase<Expected extends any = any> {
 }
 
 /**
- * Represents a `toBeCalled*` test case.
- *
- * @see https://jestjs.io/docs/expect#tohavebeencalled
- * @see https://jestjs.io/docs/expect#tohavebeencalledtimesnumber
- */
-export interface TestcaseCalled extends Testcase<number> {
-  call: 'call' | 'not call'
-}
-
-/**
  * Represents a `@throws` test case.
  */
 export interface TestcaseThrows extends Testcase<Partial<ExceptionJSON>> {

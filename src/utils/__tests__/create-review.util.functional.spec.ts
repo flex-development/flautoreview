@@ -1,8 +1,9 @@
-import github from '@actions/github'
+import * as github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
 import getRequested from '@autoreview/utils/get-requested.util'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
 import PAYLOAD from '@tests/fixtures/pr-event-with-requested-team.fixture'
+import join from 'lodash.join'
 import testSubject from '../create-review.util'
 
 /**
@@ -33,7 +34,7 @@ describe('functional:utils/createReview', () => {
   it('should call octokit.rest.pulls.createReview', () => {
     expect(mockOctokit.rest.pulls.createReview).toBeCalledTimes(1)
     expect(mockOctokit.rest.pulls.createReview).toBeCalledWith({
-      body: INPUTS.body,
+      body: join(INPUTS.body, ' '),
       event: INPUTS.event,
       owner: github.context.repo.owner,
       pull_number: PAYLOAD.pull_request.number,

@@ -19,7 +19,7 @@ export interface Inputs {
    * - `event === ReviewEvent.COMMENT`
    * - `event === ReviewEvent.REQUEST_CHANGES`
    */
-  body?: string
+  body?: string[]
 
   /**
    * Automated review action to perform.
@@ -48,7 +48,14 @@ export interface Inputs {
   /**
    * GitHub [Personal Access Token][1] with repository access.
    *
+   * Using `github.token`, the default `token` value, will result in the
+   * [`github-actions`][2] bot submitting reviews instead of the user or team
+   * listed in `reviewers`.
+   *
    * [1]: https://github.com/settings/tokens/new
+   * [2]: https://github.com/features/actions
+   *
+   * @default '${{ github.token }}'
    */
   token: string
 }

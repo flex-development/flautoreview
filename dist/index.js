@@ -91,8 +91,8 @@ InputsDTO.PROPS = [
     'token'
 ];
 __decorate([
-    class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
+    class_validator_1.IsString({ each: true }),
+    class_validator_1.IsNotEmpty({ each: true }),
     class_validator_1.IsOptional(),
     __metadata("design:type", Object)
 ], InputsDTO.prototype, "body", void 0);
@@ -291,7 +291,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
-const github_1 = __importDefault(__nccwpck_require__(5438));
+const github = __importStar(__nccwpck_require__(5438));
+const enums_1 = __nccwpck_require__(2545);
+const base_exception_1 = __importDefault(__nccwpck_require__(1101));
+const util_1 = __importDefault(__nccwpck_require__(1669));
 const defaults_config_1 = __importDefault(__nccwpck_require__(9811));
 const inputs_dto_1 = __importDefault(__nccwpck_require__(7366));
 const exception_level_enum_1 = __nccwpck_require__(9899);
@@ -322,16 +325,29 @@ function run() {
             // Validate user inputs
             const inputs = validate_util_1.default(inputs_dto_1.default, dto);
             // Check if pull request review can be automated
-            automatable_util_1.default(github_1.default.context.payload, inputs);
+            automatable_util_1.default(github.context.payload, inputs);
             // Attempt to create new pull request review
-            yield create_review_util_1.default(github_1.default.context.payload, inputs);
+            yield create_review_util_1.default(github.context.payload, inputs);
         }
         catch (error) {
-            const { data, message } = error;
-            // Log error, info, notice, or warning. Force failure for fatal exceptions
-            core[data.level](message);
-            if (data.level === exception_level_enum_1.ExceptionLevel.ERROR)
-                core.setFailed(message);
+            let exception = error;
+            // Convert Error into Exception
+            if (!exception.className) {
+                const code = enums_1.ExceptionStatusCode.INTERNAL_SERVER_ERROR;
+                const data = { level: exception_level_enum_1.ExceptionLevel.ERROR };
+                exception = new base_exception_1.default(code, error.message, data, error.stack);
+            }
+            // Get exception as json object
+            exception = exception.toJSON();
+            // Log non-fatal exceptions, but force failure for fatal exceptions
+            if (exception.data.level !== exception_level_enum_1.ExceptionLevel.ERROR) {
+                core[exception.data.level](exception.message);
+            }
+            else {
+                core.setFailed(exception.message);
+            }
+            // Log stringified exception
+            core.info(util_1.default.inspect(exception, false, null));
             return;
         }
     });
@@ -429,6 +445,25 @@ exports.default = automatable;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -442,11 +477,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const github_1 = __importDefault(__nccwpck_require__(5438));
+const github = __importStar(__nccwpck_require__(5438));
 const defaults_config_1 = __importDefault(__nccwpck_require__(9811));
 const exception_level_enum_1 = __nccwpck_require__(9899);
 const enums_1 = __nccwpck_require__(2545);
 const base_exception_1 = __importDefault(__nccwpck_require__(1101));
+const lodash_join_1 = __importDefault(__nccwpck_require__(987));
 const lodash_merge_1 = __importDefault(__nccwpck_require__(6247));
 const get_requested_util_1 = __importDefault(__nccwpck_require__(2094));
 /**
@@ -492,14 +528,14 @@ const createReview = (payload, inputs) => __awaiter(void 0, void 0, void 0, func
         }
         // Get endpoint parameters
         const params = {
-            body: inputs.body,
+            body: lodash_join_1.default(inputs.body, ' '),
             event: inputs.event,
-            owner: github_1.default.context.repo.owner,
+            owner: github.context.repo.owner,
             pull_number: payload.pull_request.number,
-            repo: github_1.default.context.repo.repo
+            repo: github.context.repo.repo
         };
         // Create new review
-        return yield github_1.default.getOctokit(token).rest.pulls.createReview(params);
+        return yield github.getOctokit(token).rest.pulls.createReview(params);
     }
     catch (error) {
         if (error.constructor.name === 'Exception')
@@ -23548,6 +23584,47 @@ function isPlainObject(value) {
 }
 
 module.exports = isPlainObject;
+
+
+/***/ }),
+
+/***/ 987:
+/***/ ((module) => {
+
+/**
+ * lodash 4.0.1 (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ * Available under MIT license <https://lodash.com/license>
+ */
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeJoin = arrayProto.join;
+
+/**
+ * Converts all elements in `array` into a string separated by `separator`.
+ *
+ * @static
+ * @memberOf _
+ * @category Array
+ * @param {Array} array The array to convert.
+ * @param {string} [separator=','] The element separator.
+ * @returns {string} Returns the joined string.
+ * @example
+ *
+ * _.join(['a', 'b', 'c'], '~');
+ * // => 'a~b~c'
+ */
+function join(array, separator) {
+  return array ? nativeJoin.call(array, separator) : '';
+}
+
+module.exports = join;
 
 
 /***/ }),

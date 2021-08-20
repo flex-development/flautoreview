@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "keywords": [
     "automation",
+    "github actions typescript",
     "github actions",
     "github automation",
-    "pull request reviews",
-    "pull requests"
+    "pull request review",
+    "pull requests",
+    "typescript action",
+    "typescript"
   ],
   "homepage": "https://github.com/flex-development/autoreview",
   "repository": "git://github.com/flex-development/autoreview.git",
@@ -55,8 +58,8 @@
     "class-transformer": "0.4.0",
     "class-transformer-validator": "0.9.1",
     "class-validator": "0.13.1",
+    "lodash.join": "4.0.1",
     "lodash.merge": "4.6.2",
-    "lodash.pick": "4.4.0",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
@@ -65,12 +68,13 @@
     "@commitlint/config-conventional": "13.0.0",
     "@commitlint/format": "13.0.0",
     "@flex-development/grease": "1.0.0",
+    "@types/chalk": "2.2.0",
     "@types/faker": "5.5.6",
     "@types/fs-extra": "9.0.11",
     "@types/jest": "26.0.23",
+    "@types/lodash.join": "4.0.6",
     "@types/lodash.merge": "4.6.6",
     "@types/lodash.omit": "4.5.6",
-    "@types/lodash.pick": "4.4.6",
     "@types/mvdan-sh": "0.5.0",
     "@types/node": "15.12.5",
     "@types/rimraf": "2.0.4",

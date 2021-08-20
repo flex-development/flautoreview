@@ -1,7 +1,10 @@
 import * as core from '@actions/core'
-import github from '@actions/github'
+import * as github from '@actions/github'
+import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
+import { ExceptionJSON } from '@flex-development/exceptions/interfaces'
 import type { ObjectPlain } from '@flex-development/tutils'
+import util from 'util'
 import defaults from './config/defaults.config'
 import InputsDTO from './dtos/inputs.dto'
 import { ExceptionLevel } from './enums/exception-level.enum'
@@ -45,11 +48,28 @@ async function run(): Promise<void> {
     // Attempt to create new pull request review
     await createReview(github.context.payload as WebhookPayload, inputs)
   } catch (error) {
-    const { data, message } = error as Exception
+    let exception: Exception | ExceptionJSON = error as Exception
 
-    // Log error, info, notice, or warning. Force failure for fatal exceptions
-    core[data.level](message)
-    if (data.level === ExceptionLevel.ERROR) core.setFailed(message)
+    // Convert Error into Exception
+    if (!exception.className) {
+      const code = ExceptionStatusCode.INTERNAL_SERVER_ERROR
+      const data = { level: ExceptionLevel.ERROR }
+
+      exception = new Exception(code, error.message, data, error.stack)
+    }
+
+    // Get exception as json object
+    exception = (exception as Exception).toJSON()
+
+    // Log non-fatal exceptions, but force failure for fatal exceptions
+    if (exception.data.level !== ExceptionLevel.ERROR) {
+      core[exception.data.level](exception.message)
+    } else {
+      core.setFailed(exception.message)
+    }
+
+    // Log stringified exception
+    core.info(util.inspect(exception, false, null))
 
     return
   }

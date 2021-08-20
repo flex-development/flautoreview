@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import github from '@actions/github'
+import * as github from '@actions/github'
 import InputsDTO from '@autoreview/dtos/inputs.dto'
 import { ReviewEvent } from '@autoreview/enums/review-event.enum'
 import type { Inputs } from '@autoreview/interfaces'
@@ -75,7 +75,8 @@ describe('functional:run', () => {
       await testSubject()
 
       // Expect
-      expect(mockCore.error).toBeCalledTimes(1)
+      expect(mockCore.error).toBeCalledTimes(0)
+      expect(mockCore.info).toBeCalledTimes(1)
       expect(mockCore.setFailed).toBeCalledTimes(1)
     })
 
@@ -90,6 +91,7 @@ describe('functional:run', () => {
       await testSubject()
 
       // Expect
+      expect(mockCore.info).toBeCalledTimes(1)
       expect(mockCore.warning).toBeCalledTimes(1)
       expect(mockCore.setFailed).toBeCalledTimes(0)
     })

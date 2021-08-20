@@ -24,8 +24,8 @@ export default class InputsDTO implements Inputs {
     'token'
   ]
 
-  @IsString()
-  @IsNotEmpty()
+  @IsString({ each: true })
+  @IsNotEmpty({ each: true })
   @IsOptional()
   body?: Inputs['body']
 

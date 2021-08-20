@@ -19,20 +19,44 @@ between accounts becoming a hassle? Geared towards lone developers, this action
 speeds up your pull request workflow by allowing you to automate reviews.
 
 ```yaml
+# Automate Pull Request Reviews - .github/workflows/autoreview.yml
+#
+# References:
+#
+# - https://github.com/flex-development/autoreview
+
+---
 name: Automate PR Reviews
 on:
   pull_request:
     types: [review_requested]
 jobs:
-  automate:
+  autoreview:
     runs-on: ubuntu-latest
     steps:
-      - uses: @flex-development/autoreview@v1.0.0
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: flexdevelopment
+        uses: '@flex-development/autoreview@v1.0.0'
         with:
           body: lgtm 👍🏾
-          reviewers:  flexdevelopment
+          reviewers: flexdevelopment
           senders: unicornware
+          token: ${{ secrets.PAT_REPO_flexdevelopment }}
+      - name: prbot
+        uses: '@flex-development/autoreview@v1.0.0'
+        with:
+          body: lgtm2 👍🏾
+          reviewers: prbot
+          senders: unicornware
+          token: ${{ secrets.PAT_REPO_prbot }}
 ```
+
+See: [`.github/workflows/autoreview.yml`](.github/workflows/autoreview.yml)
+
+**Note**: Using `github.token`, the default `token` value, will result in the
+[`github-actions`][4] bot submitting reviews instead of the user or team listed
+in `reviewers`.
 
 ### Options
 
@@ -80,7 +104,14 @@ export interface Inputs {
   /**
    * GitHub [Personal Access Token][1] with repository access.
    *
+   * Using `github.token`, the default `token` value, will result in the
+   * [`github-actions`][2] bot submitting reviews instead of the user or team
+   * listed in `reviewers`.
+   *
    * [1]: https://github.com/settings/tokens/new
+   * [2]: https://github.com/features/actions
+   *
+   * @default '${{ github.token }}'
    */
   token: string
 }
@@ -94,3 +125,4 @@ export interface Inputs {
 [1]: https://github.com/actions/toolkit/tree/master/packages/core
 [2]: https://github.com/actions/toolkit/tree/master/packages/github
 [3]: https://octokit.github.io/rest.js/v18
+[4]: https://github.com/features/actions

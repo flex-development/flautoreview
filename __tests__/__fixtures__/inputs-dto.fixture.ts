@@ -6,7 +6,7 @@ import type { Inputs } from '@autoreview/interfaces'
  */
 
 export default {
-  body: 'lgtm 👍🏾',
+  body: ['lgtm 👍🏾'],
   reviewers: 'flexdevelopment',
   senders: 'unicornware',
   token: 'token'

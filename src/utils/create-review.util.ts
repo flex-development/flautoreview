@@ -1,13 +1,16 @@
-import github from '@actions/github'
+import * as github from '@actions/github'
 import DEFAULT_INPUTS from '@autoreview/config/defaults.config'
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'
-import type { WebhookPayloadAutomatable } from '@autoreview/types'
-import { CreateReviewResponse } from '@autoreview/types'
+import type {
+  CreateReviewResponse,
+  WebhookPayloadAutomatable
+} from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { RestEndpointMethodTypes as RestEndpoint } from '@octokit/plugin-rest-endpoint-methods'
 import type { RequestError } from '@octokit/request-error'
+import join from 'lodash.join'
 import merge from 'lodash.merge'
 import getRequested from './get-requested.util'
 
@@ -63,7 +66,7 @@ const createReview = async (
 
     // Get endpoint parameters
     const params: RestEndpoint['pulls']['createReview']['parameters'] = {
-      body: inputs.body,
+      body: join(inputs.body, ' '),
       event: inputs.event,
       owner: github.context.repo.owner,
       pull_number: payload.pull_request.number,

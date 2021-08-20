@@ -5,9 +5,10 @@
  * @see https://github.com/actions/toolkit/tree/main/packages/github
  */
 
-export default {
-  context: { repo: { owner: 'flex-development', repo: 'autoreview' } },
-  getOctokit: jest.fn().mockReturnValue({
-    rest: { pulls: { createReview: jest.fn() } }
-  })
+export const context = {
+  repo: { owner: 'flex-development', repo: 'autoreview' }
 }
+
+export const getOctokit = jest.fn().mockReturnValue({
+  rest: { pulls: { createReview: jest.fn() } }
+})
