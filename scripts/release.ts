@@ -11,7 +11,7 @@ import util from 'util'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 import $branch from './utils/branch'
-import { $name, $name_no_scope, $version } from './utils/pkg-get'
+import { $name, $version } from './utils/pkg-get'
 
 /**
  * @file Scripts - Release Workflow
@@ -129,7 +129,6 @@ const options: IGreaseOptions = {
   commitAll: true,
   gitTagFallback: false,
   gitdir: process.env.PROJECT_CWD,
-  lernaPackage: $name_no_scope,
   path: process.cwd(),
   prerelease: ((): string | undefined => {
     const tag = $version.split('-')[1]
