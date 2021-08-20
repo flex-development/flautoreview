@@ -56,6 +56,13 @@ export type ReleaseOptions = {
    * @default true
    */
   releaseDraft?: IGreaseOptions['releaseDraft']
+
+  /**
+   * Map of steps in the release process that should be skipped.
+   *
+   * @default true
+   */
+  skip?: IGreaseOptions['skip']
 }
 
 /**
@@ -70,7 +77,6 @@ const args = yargs(hideBin(process.argv))
     describe: 'commit all staged changes, not just release files',
     type: 'boolean'
   })
-  .boolean('commit-all')
   .option('dry-run', {
     default: false,
     describe: 'see the commands that running release would run',
@@ -93,6 +99,9 @@ const args = yargs(hideBin(process.argv))
     describe: 'release as a draft instead of publishing it',
     type: 'boolean'
   })
+  .option('skip', {
+    describe: 'map of steps in the release process that should be skipped'
+  })
   .alias('help', 'h')
   .pkgConf('release')
   .wrap(98)
@@ -108,7 +117,8 @@ const argv: IGreaseOptions & ReleaseOptions = pick(
     'firstRelease',
     'prerelease',
     'releaseAs',
-    'releaseDraft'
+    'releaseDraft',
+    'skip'
   ]
 )
 
