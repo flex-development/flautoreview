@@ -135,7 +135,7 @@ const options: IGreaseOptions = {
     return !tag ? undefined : tag.includes('.') ? tag.split('.')[0] : tag
   })(),
   releaseAssets: ['./*.tgz'],
-  releaseBranchWhitelist: ['release/*'],
+  releaseBranchWhitelist: ['main', 'release/*'],
   releaseCommitMessageFormat: `release: ${$name}@{{currentTag}}`,
   scripts: {
     postchangelog: `yarn pack -o %s-%v.tgz${argv.dryRun ? ' -n' : ''}`,
