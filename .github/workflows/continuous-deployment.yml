@@ -10,11 +10,12 @@
 name: Continuous Deployment
 on:
   pull_request_review:
-    branches: ['release/**']
     types: [submitted]
 jobs:
   continuous-deployment:
-    if: github.event.review.state == 'approved'
+    if: |
+      ${{ startsWith(github.ref, 'ref/heads/releases/') }} &&
+      github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     env:
       PAT_GPR_FLDV: ${{ secrets.PAT_GPR }}
