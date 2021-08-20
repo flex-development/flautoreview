@@ -1,8 +1,8 @@
 import * as github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { Inputs } from '@autoreview/interfaces'
-import type { WebhookPayloadAutomatable } from '@autoreview/types'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { Inputs } from '@flautoreview/interfaces'
+import type { WebhookPayloadAutomatable } from '@flautoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
@@ -13,7 +13,7 @@ import testSubject from '../create-review.util'
 
 /**
  * @file Unit Tests - createReview
- * @module autoreview/utils/tests/unit/createReview
+ * @module flautoreview/utils/tests/unit/createReview
  */
 
 const mockOctokit = github.getOctokit('') as jest.Mocked<

@@ -4,11 +4,12 @@
 # See: https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions
 
 ---
-name: autoreview
+name: flautoreview
 description: Automate pull request reviews
 author: '@flex-development'
 inputs:
   body:
+    default: ''
     description: |
       body text of pull request review.
       required when using COMMENT or REQUEST_CHANGES for the event input
@@ -20,14 +21,16 @@ inputs:
       options: APPROVE | COMMENT | REQUEST_CHANGES
     required: false
   reviewers:
+    default: ''
     description: |
       list of user logins and/or team slugs to automate reviews on behalf of
-      e.g: 'flexdevelopment,dependabot'
+      e.g: 'flexdevelopment'
     required: false
   senders:
+    default: ''
     description: |
       list of review requesters allowed to request automated reviews
-      e.g: 'unicornware,privilegeduser'
+      e.g: 'unicornware'
     required: false
   token:
     default: ${{ github.token }}

@@ -6,7 +6,7 @@
  */
 
 export const context = {
-  repo: { owner: 'flex-development', repo: 'autoreview' }
+  repo: { owner: 'flex-development', repo: 'flautoreview' }
 }
 
 export const getOctokit = jest.fn().mockReturnValue({

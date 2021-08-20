@@ -1,8 +1,8 @@
-import type { TVODefaults } from '@autoreview/types'
+import type { TVODefaults } from '@flautoreview/types'
 
 /**
  * @file Configuration - Constant Values
- * @module autoreview/config/constants
+ * @module flautoreview/config/constants
  */
 
 /**

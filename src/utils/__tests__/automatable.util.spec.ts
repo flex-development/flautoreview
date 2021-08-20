@@ -1,6 +1,6 @@
 import type { WebhookPayload } from '@actions/github/lib/interfaces'
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { Inputs } from '@autoreview/interfaces'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { Inputs } from '@flautoreview/interfaces'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
@@ -10,7 +10,7 @@ import testSubject from '../automatable.util'
 
 /**
  * @file Unit Tests - automatable
- * @module autoreview/utils/tests/unit/automatable
+ * @module flautoreview/utils/tests/unit/automatable
  */
 
 describe('unit:utils/automatable', () => {

@@ -1,13 +1,13 @@
 import type { WebhookPayload } from '@actions/github/lib/interfaces'
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { Inputs } from '@autoreview/interfaces'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { Inputs } from '@flautoreview/interfaces'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { PullRequestEvent } from '@octokit/webhooks-definitions/schema'
 
 /**
  * @file Utility - automatable
- * @module autoreview/utils/automatable
+ * @module flautoreview/utils/automatable
  */
 
 /**

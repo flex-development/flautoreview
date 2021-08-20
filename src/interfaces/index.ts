@@ -1,6 +1,6 @@
 /**
  * @file Entry Point - Interfaces
- * @module autoreview/interfaces
+ * @module flautoreview/interfaces
  */
 
 export type { Inputs } from './inputs.interface'

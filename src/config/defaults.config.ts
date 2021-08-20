@@ -1,9 +1,9 @@
-import { ReviewEvent } from '@autoreview/enums/review-event.enum'
-import type { Inputs } from '@autoreview/interfaces'
+import { ReviewEvent } from '@flautoreview/enums/review-event.enum'
+import type { Inputs } from '@flautoreview/interfaces'
 
 /**
  * @file Configuration - Default Inputs
- * @module autoreview/config/defaults
+ * @module flautoreview/config/defaults
  */
 
 /**

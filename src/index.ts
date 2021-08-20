@@ -1,8 +1,8 @@
-import run from '@autoreview/run'
+import run from '@flautoreview/run'
 
 /**
  * @file Action Entry Point
- * @module autoreview
+ * @module flautoreview
  */
 
 run()

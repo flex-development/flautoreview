@@ -19,8 +19,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "paths": {
-      "@autoreview": ["src/index.ts"],
-      "@autoreview/*": ["src/*"],
+      "@flautoreview": ["src/index.ts"],
+      "@flautoreview/*": ["src/*"],
       "@flex-development/grease": [
         "node_modules/@flex-development/grease/cjs/index"
       ],

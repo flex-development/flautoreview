@@ -114,7 +114,6 @@ const RULES = {
       skipWords: [
         'argv',
         'automatable',
-        'autoreview',
         'chp',
         'commitlint',
         'dependabot',
@@ -122,6 +121,7 @@ const RULES = {
         'dtos',
         'enum',
         'enums',
+        'flautoreview',
         'flexdevelopment',
         'formatter',
         'keyof',

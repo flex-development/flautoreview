@@ -1,23 +1,23 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import InputsDTO from '@autoreview/dtos/inputs.dto'
-import { ReviewEvent } from '@autoreview/enums/review-event.enum'
-import type { Inputs } from '@autoreview/interfaces'
-import automatable from '@autoreview/utils/automatable.util'
-import create from '@autoreview/utils/create-review.util'
-import validate from '@autoreview/utils/validate.util'
+import InputsDTO from '@flautoreview/dtos/inputs.dto'
+import { ReviewEvent } from '@flautoreview/enums/review-event.enum'
+import type { Inputs } from '@flautoreview/interfaces'
+import automatable from '@flautoreview/utils/automatable.util'
+import create from '@flautoreview/utils/create-review.util'
+import validate from '@flautoreview/utils/validate.util'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
 import PAYLOAD from '@tests/fixtures/pr-event-with-requested-reviewer.fixture'
 import testSubject from '../run'
 
 /**
  * @file Functional Tests - run
- * @module autoreview/tests/functional/run
+ * @module flautoreview/tests/functional/run
  */
 
-jest.mock('@autoreview/utils/automatable.util')
-jest.mock('@autoreview/utils/create-review.util')
-jest.mock('@autoreview/utils/validate.util')
+jest.mock('@flautoreview/utils/automatable.util')
+jest.mock('@flautoreview/utils/create-review.util')
+jest.mock('@flautoreview/utils/validate.util')
 
 const mockAutomable = automatable as jest.MockedFunction<typeof automatable>
 const mockCore = core as jest.Mocked<typeof core>

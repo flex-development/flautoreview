@@ -1,6 +1,6 @@
 /**
  * @file Enums - ReviewEvent
- * @module autoreview/enums/ReviewEvent
+ * @module flautoreview/enums/ReviewEvent
  */
 
 /**

@@ -1,8 +1,8 @@
-import { ReviewEvent } from '@autoreview/enums/review-event.enum'
+import { ReviewEvent } from '@flautoreview/enums/review-event.enum'
 
 /**
  * @file Interfaces - Inputs
- * @module autoreview/interfaces/Inputs
+ * @module flautoreview/interfaces/Inputs
  */
 
 /**
@@ -30,7 +30,7 @@ export interface Inputs {
 
   /**
    * List of user logins and/or team slugs to automate reviews on behalf of;
-   * e.g: `'flexdevelopment,team-autoreview'`.
+   * e.g: `'flexdevelopment,team-flautoreview'`.
    *
    * If `undefined` or an empty string, a warning will be logged and the action
    * will exit without failing.

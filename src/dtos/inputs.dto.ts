@@ -1,14 +1,14 @@
-import { ReviewEvent } from '@autoreview/enums/review-event.enum'
-import type { Inputs } from '@autoreview/interfaces'
+import { ReviewEvent } from '@flautoreview/enums/review-event.enum'
+import type { Inputs } from '@flautoreview/interfaces'
 import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 
 /**
  * @file Data Transfer Objects - InputsDTO
- * @module autoreview/dtos/InputsDTO
+ * @module flautoreview/dtos/InputsDTO
  */
 
 /**
- * Options used by `autoreview`.
+ * Options used by `flautoreview`.
  *
  * @implements {Inputs}
  */

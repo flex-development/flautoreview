@@ -1,4 +1,4 @@
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
 import { ExceptionStatusCode as Code } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
@@ -7,7 +7,7 @@ import { ValidationError } from 'class-validator'
 
 /**
  * @file Exceptions - ValidationException
- * @module autoreview/exceptions/ValidationException
+ * @module flautoreview/exceptions/ValidationException
  */
 
 /**

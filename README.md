@@ -1,4 +1,4 @@
-# :white_check_mark: autoreview
+# :white_check_mark: flautoreview
 
 GitHub Action to automate pull request reviews
 
@@ -19,11 +19,11 @@ between accounts becoming a hassle? Geared towards lone developers, this action
 speeds up your pull request workflow by allowing you to automate reviews.
 
 ```yaml
-# Automate Pull Request Reviews - .github/workflows/autoreview.yml
+# Automate Pull Request Reviews - .github/workflows/flautoreview.yml
 #
 # References:
 #
-# - https://github.com/flex-development/autoreview
+# - https://github.com/flex-development/flautoreview
 
 ---
 name: Automate PR Reviews
@@ -31,20 +31,20 @@ on:
   pull_request:
     types: [review_requested]
 jobs:
-  autoreview:
+  flautoreview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: flexdevelopment
-        uses: '@flex-development/autoreview@v1.0.0'
+        uses: '@flex-development/flautoreview@v1.0.0'
         with:
           body: lgtm 👍🏾
           reviewers: flexdevelopment
           senders: unicornware
           token: ${{ secrets.PAT_REPO_flexdevelopment }}
       - name: prbot
-        uses: '@flex-development/autoreview@v1.0.0'
+        uses: '@flex-development/flautoreview@v1.0.0'
         with:
           body: lgtm2 👍🏾
           reviewers: prbot
@@ -52,7 +52,7 @@ jobs:
           token: ${{ secrets.PAT_REPO_prbot }}
 ```
 
-See: [`.github/workflows/autoreview.yml`](.github/workflows/autoreview.yml)
+See: [`.github/workflows/flautoreview.yml`](.github/workflows/flautoreview.yml)
 
 **Note**: Using `github.token`, the default `token` value, will result in the
 [`github-actions`][4] bot submitting reviews instead of the user or team listed
@@ -86,7 +86,7 @@ export interface Inputs {
 
   /**
    * List of user logins and/or team slugs to automate reviews on behalf of;
-   * e.g: `'flexdevelopment,team-autoreview'`.
+   * e.g: `'flexdevelopment,team-flautoreview'`.
    *
    * If `undefined` or an empty string, a warning will be logged and the action
    * will exit without failing.

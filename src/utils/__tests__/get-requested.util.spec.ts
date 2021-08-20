@@ -1,5 +1,5 @@
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { WebhookPayloadAutomatable } from '@autoreview/types'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { WebhookPayloadAutomatable } from '@flautoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import USER from '@tests/fixtures/pr-event-with-requested-reviewer.fixture'
@@ -9,7 +9,7 @@ import testSubject from '../get-requested.util'
 
 /**
  * @file Unit Tests - getRequested
- * @module autoreview/utils/tests/unit/getRequested
+ * @module flautoreview/utils/tests/unit/getRequested
  */
 
 describe('unit:utils/getRequested', () => {

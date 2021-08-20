@@ -1,4 +1,4 @@
-import type { Inputs } from '@autoreview/interfaces'
+import type { Inputs } from '@flautoreview/interfaces'
 
 /**
  * @file Global Fixture - InputsDTO

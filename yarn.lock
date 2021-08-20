@@ -672,9 +672,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/autoreview@workspace:.":
+"@flex-development/exceptions@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@flex-development/exceptions@npm:2.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Fexceptions%2F2.0.1%2F008a7848fd33bf966cbc98c45188e78a74274140aa6d71460cd770be213a47ae"
+  dependencies:
+    "@types/lodash.isplainobject": latest
+    "@types/lodash.omit": latest
+    lodash.isplainobject: latest
+    lodash.omit: latest
+  checksum: 935f9429bf40652e1657d2526330a054dee3ad7f60829098c7e69f82923f4124931010885e90e0243d5238fea96791b1a3efbb3a84f3cc63ed5ba6363ba1b759
+  languageName: node
+  linkType: hard
+
+"@flex-development/flautoreview@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@flex-development/autoreview@workspace:."
+  resolution: "@flex-development/flautoreview@workspace:."
   dependencies:
     "@actions/core": 1.4.0
     "@actions/github": 5.0.0
@@ -686,7 +698,6 @@ __metadata:
     "@flex-development/grease": 1.0.0
     "@flex-development/tutils": 3.1.0
     "@octokit/webhooks-definitions": 3.67.3
-    "@types/chalk": 2.2.0
     "@types/faker": 5.5.6
     "@types/fs-extra": 9.0.11
     "@types/jest": 26.0.23
@@ -742,18 +753,6 @@ __metadata:
     typescript: 4.3.4
   languageName: unknown
   linkType: soft
-
-"@flex-development/exceptions@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@flex-development/exceptions@npm:2.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Fexceptions%2F2.0.1%2F008a7848fd33bf966cbc98c45188e78a74274140aa6d71460cd770be213a47ae"
-  dependencies:
-    "@types/lodash.isplainobject": latest
-    "@types/lodash.omit": latest
-    lodash.isplainobject: latest
-    lodash.omit: latest
-  checksum: 935f9429bf40652e1657d2526330a054dee3ad7f60829098c7e69f82923f4124931010885e90e0243d5238fea96791b1a3efbb3a84f3cc63ed5ba6363ba1b759
-  languageName: node
-  linkType: hard
 
 "@flex-development/grease@npm:1.0.0":
   version: 1.0.0
@@ -1584,15 +1583,6 @@ __metadata:
   dependencies:
     "@babel/types": ^7.3.0
   checksum: a797ea09c72307569e3ee08aa3900ca744ce3091114084f2dc59b67a45ee7d01df7865252790dbfa787a7915ce892cdc820c9b920f3683292765fc656b08dc63
-  languageName: node
-  linkType: hard
-
-"@types/chalk@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@types/chalk@npm:2.2.0"
-  dependencies:
-    chalk: "*"
-  checksum: 846437590d0bf0026d8c2f454e5d91a486becfabde61c0441025e791a0fed75304e143717bc4d025569394dcce5a32f2c53d97253d0c735ac1abae63f1b25c3e
   languageName: node
   linkType: hard
 
@@ -2884,7 +2874,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:*, chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1":
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:

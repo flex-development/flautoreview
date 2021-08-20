@@ -1,5 +1,5 @@
-import { DEFAULT_TVO } from '@autoreview/config/constants.config'
-import ValidationException from '@autoreview/exceptions/validation.exception'
+import { DEFAULT_TVO } from '@flautoreview/config/constants.config'
+import ValidationException from '@flautoreview/exceptions/validation.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
 import { classToPlain } from 'class-transformer'
 import type {
@@ -11,7 +11,7 @@ import merge from 'lodash.merge'
 
 /**
  * @file Utility - validate
- * @module autoreview/utils/validate
+ * @module flautoreview/utils/validate
  */
 
 /**

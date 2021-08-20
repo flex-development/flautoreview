@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DEFAULT_TVO = void 0;
 /**
  * @file Configuration - Constant Values
- * @module autoreview/config/constants
+ * @module flautoreview/config/constants
  */
 /**
  * @property {TVODefaults} DEFAULT_TVO - `class-transformer-validator` options
@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const review_event_enum_1 = __nccwpck_require__(9859);
 /**
  * @file Configuration - Default Inputs
- * @module autoreview/config/defaults
+ * @module flautoreview/config/defaults
  */
 /**
  * @property {Partial<Inputs>} DEFAULT_INPUTS - Default action inputs
@@ -71,10 +71,10 @@ const review_event_enum_1 = __nccwpck_require__(9859);
 const class_validator_1 = __nccwpck_require__(4803);
 /**
  * @file Data Transfer Objects - InputsDTO
- * @module autoreview/dtos/InputsDTO
+ * @module flautoreview/dtos/InputsDTO
  */
 /**
- * Options used by `autoreview`.
+ * Options used by `flautoreview`.
  *
  * @implements {Inputs}
  */
@@ -128,7 +128,7 @@ exports.default = InputsDTO;
 
 /**
  * @file Enums - ExceptionLevel
- * @module autoreview/enums/ExceptionLevel
+ * @module flautoreview/enums/ExceptionLevel
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ExceptionLevel = void 0;
@@ -156,7 +156,7 @@ var ExceptionLevel;
 
 /**
  * @file Enums - ReviewEvent
- * @module autoreview/enums/ReviewEvent
+ * @module flautoreview/enums/ReviewEvent
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReviewEvent = void 0;
@@ -190,7 +190,7 @@ const base_exception_1 = __importDefault(__nccwpck_require__(1101));
 const class_transformer_1 = __nccwpck_require__(1300);
 /**
  * @file Exceptions - ValidationException
- * @module autoreview/exceptions/ValidationException
+ * @module flautoreview/exceptions/ValidationException
  */
 /**
  * Transforms [validation errors][1] and `Error` objects into [`Exception`][2]
@@ -246,7 +246,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const run_1 = __importDefault(__nccwpck_require__(8082));
 /**
  * @file Action Entry Point
- * @module autoreview
+ * @module flautoreview
  */
 run_1.default();
 //# sourceMappingURL=index.js.map
@@ -303,7 +303,7 @@ const create_review_util_1 = __importDefault(__nccwpck_require__(4107));
 const validate_util_1 = __importDefault(__nccwpck_require__(451));
 /**
  * @file Run Method
- * @module autoreview/run
+ * @module flautoreview/run
  */
 /**
  * Runs the GitHub Action workflow.
@@ -371,7 +371,7 @@ const enums_1 = __nccwpck_require__(2545);
 const base_exception_1 = __importDefault(__nccwpck_require__(1101));
 /**
  * @file Utility - automatable
- * @module autoreview/utils/automatable
+ * @module flautoreview/utils/automatable
  */
 /**
  * Checks if a pull request open and a review was requested. A pull request
@@ -487,7 +487,7 @@ const lodash_merge_1 = __importDefault(__nccwpck_require__(6247));
 const get_requested_util_1 = __importDefault(__nccwpck_require__(2094));
 /**
  * @file Utility - createReview
- * @module autoreview/utils/createReview
+ * @module flautoreview/utils/createReview
  */
 /**
  * Creates a new pull request review.
@@ -567,7 +567,7 @@ const enums_1 = __nccwpck_require__(2545);
 const base_exception_1 = __importDefault(__nccwpck_require__(1101));
 /**
  * @file Utility - getRequested
- * @module autoreview/utils/getRequested
+ * @module flautoreview/utils/getRequested
  */
 /**
  * Returns the user login or team slug of a pull request's requested reviewer.
@@ -609,7 +609,7 @@ const class_transformer_validator_1 = __nccwpck_require__(6148);
 const lodash_merge_1 = __importDefault(__nccwpck_require__(6247));
 /**
  * @file Utility - validate
- * @module autoreview/utils/validate
+ * @module flautoreview/utils/validate
  */
 /**
  * Synchronously transforms `value` into a `Model` class object and validates

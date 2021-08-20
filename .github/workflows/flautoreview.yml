@@ -2,15 +2,15 @@
 #
 # References:
 #
-# - https://github.com/flex-development/autoreview
+# - https://github.com/flex-development/flautoreview
 
 ---
-name: Autoreview
+name: Flautoreview
 on:
   pull_request:
     types: [review_requested]
 jobs:
-  autoreview:
+  flautoreview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch

@@ -2,7 +2,7 @@ import type { TransformValidationOptions } from 'class-transformer-validator'
 
 /**
  * @file Type Definitions - Validation
- * @module autoreview/types/validation
+ * @module flautoreview/types/validation
  */
 
 /**

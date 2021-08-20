@@ -1,11 +1,11 @@
 import * as github from '@actions/github'
-import DEFAULT_INPUTS from '@autoreview/config/defaults.config'
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { Inputs } from '@autoreview/interfaces'
+import DEFAULT_INPUTS from '@flautoreview/config/defaults.config'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { Inputs } from '@flautoreview/interfaces'
 import type {
   CreateReviewResponse,
   WebhookPayloadAutomatable
-} from '@autoreview/types'
+} from '@flautoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { RestEndpointMethodTypes as RestEndpoint } from '@octokit/plugin-rest-endpoint-methods'
@@ -16,7 +16,7 @@ import getRequested from './get-requested.util'
 
 /**
  * @file Utility - createReview
- * @module autoreview/utils/createReview
+ * @module flautoreview/utils/createReview
  */
 
 /**

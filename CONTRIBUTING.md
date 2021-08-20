@@ -25,7 +25,8 @@ project. This includes, but is not limited to:
 
 ### Terminology
 
-People interacting with the `autoreview` project are grouped into 4 categories:
+People interacting with the `flautoreview` project are grouped into 4
+categories:
 
 - **owner**: `flex-development` organization owners with full admin rights
 - **maintainer**: owners and people added to the organization who actively
@@ -77,7 +78,7 @@ add the `PAT_GPR` variable to your shell:
 ### Clone & Install
 
 ```zsh
-git clone https://github.com/flex-development/autoreview
+git clone https://github.com/flex-development/flautoreview
 cd grease
 yarn bootstrap
 ```
@@ -301,7 +302,7 @@ Every opened PR should:
 ### Pull Request URL Format
 
 ```zsh
-https://github.com/flex-development/autoreview/compare/next...<branch>
+https://github.com/flex-development/flautoreview/compare/next...<branch>
 ```
 
 where `<branch>` is the name of the branch you'd like to merge into `next`.

@@ -1,4 +1,4 @@
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import ERROR from '@tests/fixtures/error.fixture'
 import VALIDATION_ERRORS from '@tests/fixtures/validation-errors.fixture'
@@ -6,7 +6,7 @@ import TestSubject from '../validation.exception'
 
 /**
  * @file Unit Tests - ValidationException
- * @module autoreview/exceptions/tests/unit/ValidationException
+ * @module flautoreview/exceptions/tests/unit/ValidationException
  */
 
 describe('unit:exceptions/ValidationException', () => {

@@ -1,6 +1,6 @@
 /**
  * @file Enums - ExceptionLevel
- * @module autoreview/enums/ExceptionLevel
+ * @module flautoreview/enums/ExceptionLevel
  */
 
 /**

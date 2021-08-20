@@ -1,6 +1,6 @@
 import * as github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
-import getRequested from '@autoreview/utils/get-requested.util'
+import getRequested from '@flautoreview/utils/get-requested.util'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
 import PAYLOAD from '@tests/fixtures/pr-event-with-requested-team.fixture'
 import join from 'lodash.join'
@@ -8,10 +8,10 @@ import testSubject from '../create-review.util'
 
 /**
  * @file Functional Tests - createReview
- * @module autoreview/utils/tests/functional/createReview
+ * @module flautoreview/utils/tests/functional/createReview
  */
 
-jest.mock('@autoreview/utils/get-requested.util')
+jest.mock('@flautoreview/utils/get-requested.util')
 
 const mockGetRequested = getRequested as jest.Mocked<typeof getRequested>
 const mockOctokit = github.getOctokit('') as jest.Mocked<

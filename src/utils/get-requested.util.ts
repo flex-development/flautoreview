@@ -1,12 +1,12 @@
-import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { WebhookPayloadAutomatable } from '@autoreview/types'
+import { ExceptionLevel } from '@flautoreview/enums/exception-level.enum'
+import type { WebhookPayloadAutomatable } from '@flautoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
 
 /**
  * @file Utility - getRequested
- * @module autoreview/utils/getRequested
+ * @module flautoreview/utils/getRequested
  */
 
 /**

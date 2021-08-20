@@ -4,7 +4,7 @@ import testSubject from '../validate.util'
 
 /**
  * @file Unit Tests - validate
- * @module autoreview/utils/tests/unit/validate
+ * @module flautoreview/utils/tests/unit/validate
  */
 
 describe('unit:utils/validate', () => {

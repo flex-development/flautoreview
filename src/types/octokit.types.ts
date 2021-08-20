@@ -10,7 +10,7 @@ import type {
 
 /**
  * @file Type Definitions - Octokit
- * @module autoreview/types/octokit
+ * @module flautoreview/types/octokit
  */
 
 /**

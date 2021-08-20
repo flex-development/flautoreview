@@ -1,6 +1,6 @@
 /**
  * @file Entry Point - Type Definitions
- * @module autoreview/types
+ * @module flautoreview/types
  */
 
 export * from './octokit.types'

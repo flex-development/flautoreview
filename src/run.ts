@@ -16,7 +16,7 @@ import validate from './utils/validate.util'
 
 /**
  * @file Run Method
- * @module autoreview/run
+ * @module flautoreview/run
  */
 
 /**

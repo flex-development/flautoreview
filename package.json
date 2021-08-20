@@ -1,5 +1,5 @@
 {
-  "name": "@flex-development/autoreview",
+  "name": "@flex-development/flautoreview",
   "description": "GitHub Action to automate pull request reviews",
   "version": "1.0.0",
   "keywords": [
@@ -12,10 +12,10 @@
     "typescript action",
     "typescript"
   ],
-  "homepage": "https://github.com/flex-development/autoreview",
-  "repository": "git://github.com/flex-development/autoreview.git",
+  "homepage": "https://github.com/flex-development/flautoreview",
+  "repository": "git://github.com/flex-development/flautoreview.git",
   "bugs": {
-    "url": "https://github.com/flex-development/autoreview/issues"
+    "url": "https://github.com/flex-development/flautoreview/issues"
   },
   "license": "BSD-3-Clause",
   "author": {
@@ -68,7 +68,6 @@
     "@commitlint/config-conventional": "13.0.0",
     "@commitlint/format": "13.0.0",
     "@flex-development/grease": "1.0.0",
-    "@types/chalk": "2.2.0",
     "@types/faker": "5.5.6",
     "@types/fs-extra": "9.0.11",
     "@types/jest": "26.0.23",

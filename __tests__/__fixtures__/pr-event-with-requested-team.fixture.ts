@@ -1,4 +1,4 @@
-import type { WebhookPayloadAutomatableTeam } from '@autoreview/types'
+import type { WebhookPayloadAutomatableTeam } from '@flautoreview/types'
 import faker from 'faker'
 
 /**
@@ -12,28 +12,28 @@ export default {
   pull_request: {
     _links: {
       comments: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/issues/2/comments'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/issues/2/comments'
       },
       commits: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/pulls/2/commits'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/pulls/2/commits'
       },
       html: {
-        href: 'https://github.com/flex-development/autoreview/pull/2'
+        href: 'https://github.com/flex-development/flautoreview/pull/2'
       },
       issue: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/issues/2'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/issues/2'
       },
       review_comment: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/pulls/comments{/number}'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/pulls/comments{/number}'
       },
       review_comments: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/pulls/2/comments'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/pulls/2/comments'
       },
       self: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/pulls/2'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/pulls/2'
       },
       statuses: {
-        href: 'https://api.github.com/repos/flex-development/autoreview/statuses/ec26c3e57ca3a959ca5aad62de7213c562f8c821'
+        href: 'https://api.github.com/repos/flex-development/flautoreview/statuses/ec26c3e57ca3a959ca5aad62de7213c562f8c821'
       }
     },
     active_lock_reason: null,
@@ -50,51 +50,51 @@ export default {
         allow_rebase_merge: true,
         allow_squash_merge: true,
         archive_url:
-          'https://api.github.com/repos/flex-development/autoreview/{archive_format}{/ref}',
+          'https://api.github.com/repos/flex-development/flautoreview/{archive_format}{/ref}',
         archived: false,
         assignees_url:
-          'https://api.github.com/repos/flex-development/autoreview/assignees{/user}',
+          'https://api.github.com/repos/flex-development/flautoreview/assignees{/user}',
         blobs_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/blobs{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/blobs{/sha}',
         branches_url:
-          'https://api.github.com/repos/flex-development/autoreview/branches{/branch}',
-        clone_url: 'https://github.com/flex-development/autoreview.git',
+          'https://api.github.com/repos/flex-development/flautoreview/branches{/branch}',
+        clone_url: 'https://github.com/flex-development/flautoreview.git',
         collaborators_url:
-          'https://api.github.com/repos/flex-development/autoreview/collaborators{/collaborator}',
+          'https://api.github.com/repos/flex-development/flautoreview/collaborators{/collaborator}',
         comments_url:
-          'https://api.github.com/repos/flex-development/autoreview/comments{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/comments{/number}',
         commits_url:
-          'https://api.github.com/repos/flex-development/autoreview/commits{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/commits{/sha}',
         compare_url:
-          'https://api.github.com/repos/flex-development/autoreview/compare/{base}...{head}',
+          'https://api.github.com/repos/flex-development/flautoreview/compare/{base}...{head}',
         contents_url:
-          'https://api.github.com/repos/flex-development/autoreview/contents/{+path}',
+          'https://api.github.com/repos/flex-development/flautoreview/contents/{+path}',
         contributors_url:
-          'https://api.github.com/repos/flex-development/autoreview/contributors',
+          'https://api.github.com/repos/flex-development/flautoreview/contributors',
         created_at: '2019-05-15T15:19:25Z',
         default_branch: 'master',
         delete_branch_on_merge: false,
         deployments_url:
-          'https://api.github.com/repos/flex-development/autoreview/deployments',
+          'https://api.github.com/repos/flex-development/flautoreview/deployments',
         description: null,
         disabled: false,
         downloads_url:
-          'https://api.github.com/repos/flex-development/autoreview/downloads',
+          'https://api.github.com/repos/flex-development/flautoreview/downloads',
         events_url:
-          'https://api.github.com/repos/flex-development/autoreview/events',
+          'https://api.github.com/repos/flex-development/flautoreview/events',
         fork: false,
         forks: 0,
         forks_count: 0,
         forks_url:
-          'https://api.github.com/repos/flex-development/autoreview/forks',
-        full_name: 'flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/forks',
+        full_name: 'flex-development/flautoreview',
         git_commits_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/commits{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/commits{/sha}',
         git_refs_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/refs{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/refs{/sha}',
         git_tags_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/tags{/sha}',
-        git_url: 'git://github.com/flex-development/autoreview.git',
+          'https://api.github.com/repos/flex-development/flautoreview/git/tags{/sha}',
+        git_url: 'git://github.com/flex-development/flautoreview.git',
         has_downloads: true,
         has_issues: true,
         has_pages: true,
@@ -102,32 +102,32 @@ export default {
         has_wiki: true,
         homepage: null,
         hooks_url:
-          'https://api.github.com/repos/flex-development/autoreview/hooks',
-        html_url: 'https://github.com/flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/hooks',
+        html_url: 'https://github.com/flex-development/flautoreview',
         id: 186853002,
         issue_comment_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues/comments{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues/comments{/number}',
         issue_events_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues/events{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues/events{/number}',
         issues_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues{/number}',
         keys_url:
-          'https://api.github.com/repos/flex-development/autoreview/keys{/key_id}',
+          'https://api.github.com/repos/flex-development/flautoreview/keys{/key_id}',
         labels_url:
-          'https://api.github.com/repos/flex-development/autoreview/labels{/name}',
+          'https://api.github.com/repos/flex-development/flautoreview/labels{/name}',
         language: null,
         languages_url:
-          'https://api.github.com/repos/flex-development/autoreview/languages',
+          'https://api.github.com/repos/flex-development/flautoreview/languages',
         license: null,
         merges_url:
-          'https://api.github.com/repos/flex-development/autoreview/merges',
+          'https://api.github.com/repos/flex-development/flautoreview/merges',
         milestones_url:
-          'https://api.github.com/repos/flex-development/autoreview/milestones{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/milestones{/number}',
         mirror_url: null,
-        name: 'autoreview',
+        name: 'flautoreview',
         node_id: `${faker.datatype.string(12)}=`,
         notifications_url:
-          'https://api.github.com/repos/flex-development/autoreview/notifications{?since,all,participating}',
+          'https://api.github.com/repos/flex-development/flautoreview/notifications{?since,all,participating}',
         open_issues: 2,
         open_issues_count: 2,
         owner: {
@@ -160,30 +160,30 @@ export default {
         },
         private: false,
         pulls_url:
-          'https://api.github.com/repos/flex-development/autoreview/pulls{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/pulls{/number}',
         pushed_at: '2019-05-15T15:20:32Z',
         releases_url:
-          'https://api.github.com/repos/flex-development/autoreview/releases{/id}',
+          'https://api.github.com/repos/flex-development/flautoreview/releases{/id}',
         size: 0,
-        ssh_url: 'git@github.com:flex-development/autoreview.git',
+        ssh_url: 'git@github.com:flex-development/flautoreview.git',
         stargazers_count: 0,
         stargazers_url:
-          'https://api.github.com/repos/flex-development/autoreview/stargazers',
+          'https://api.github.com/repos/flex-development/flautoreview/stargazers',
         statuses_url:
-          'https://api.github.com/repos/flex-development/autoreview/statuses/{sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/statuses/{sha}',
         subscribers_url:
-          'https://api.github.com/repos/flex-development/autoreview/subscribers',
+          'https://api.github.com/repos/flex-development/flautoreview/subscribers',
         subscription_url:
-          'https://api.github.com/repos/flex-development/autoreview/subscription',
-        svn_url: 'https://github.com/flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/subscription',
+        svn_url: 'https://github.com/flex-development/flautoreview',
         tags_url:
-          'https://api.github.com/repos/flex-development/autoreview/tags',
+          'https://api.github.com/repos/flex-development/flautoreview/tags',
         teams_url:
-          'https://api.github.com/repos/flex-development/autoreview/teams',
+          'https://api.github.com/repos/flex-development/flautoreview/teams',
         trees_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/trees{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/trees{/sha}',
         updated_at: '2019-05-15T15:19:27Z',
-        url: 'https://api.github.com/repos/flex-development/autoreview',
+        url: 'https://api.github.com/repos/flex-development/flautoreview',
         watchers: 0,
         watchers_count: 0
       },
@@ -218,13 +218,13 @@ export default {
     closed_at: null,
     comments: 0,
     comments_url:
-      'https://api.github.com/repos/flex-development/autoreview/issues/2/comments',
+      'https://api.github.com/repos/flex-development/flautoreview/issues/2/comments',
     commits: 1,
     commits_url:
-      'https://api.github.com/repos/flex-development/autoreview/pulls/2/commits',
+      'https://api.github.com/repos/flex-development/flautoreview/pulls/2/commits',
     created_at: '2019-05-15T15:20:33Z',
     deletions: 1,
-    diff_url: 'https://github.com/flex-development/autoreview/pull/2.diff',
+    diff_url: 'https://github.com/flex-development/flautoreview/pull/2.diff',
     draft: false,
     head: {
       label: 'flex-development:changes',
@@ -234,51 +234,51 @@ export default {
         allow_rebase_merge: true,
         allow_squash_merge: true,
         archive_url:
-          'https://api.github.com/repos/flex-development/autoreview/{archive_format}{/ref}',
+          'https://api.github.com/repos/flex-development/flautoreview/{archive_format}{/ref}',
         archived: false,
         assignees_url:
-          'https://api.github.com/repos/flex-development/autoreview/assignees{/user}',
+          'https://api.github.com/repos/flex-development/flautoreview/assignees{/user}',
         blobs_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/blobs{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/blobs{/sha}',
         branches_url:
-          'https://api.github.com/repos/flex-development/autoreview/branches{/branch}',
-        clone_url: 'https://github.com/flex-development/autoreview.git',
+          'https://api.github.com/repos/flex-development/flautoreview/branches{/branch}',
+        clone_url: 'https://github.com/flex-development/flautoreview.git',
         collaborators_url:
-          'https://api.github.com/repos/flex-development/autoreview/collaborators{/collaborator}',
+          'https://api.github.com/repos/flex-development/flautoreview/collaborators{/collaborator}',
         comments_url:
-          'https://api.github.com/repos/flex-development/autoreview/comments{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/comments{/number}',
         commits_url:
-          'https://api.github.com/repos/flex-development/autoreview/commits{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/commits{/sha}',
         compare_url:
-          'https://api.github.com/repos/flex-development/autoreview/compare/{base}...{head}',
+          'https://api.github.com/repos/flex-development/flautoreview/compare/{base}...{head}',
         contents_url:
-          'https://api.github.com/repos/flex-development/autoreview/contents/{+path}',
+          'https://api.github.com/repos/flex-development/flautoreview/contents/{+path}',
         contributors_url:
-          'https://api.github.com/repos/flex-development/autoreview/contributors',
+          'https://api.github.com/repos/flex-development/flautoreview/contributors',
         created_at: '2019-05-15T15:19:25Z',
         default_branch: 'master',
         delete_branch_on_merge: false,
         deployments_url:
-          'https://api.github.com/repos/flex-development/autoreview/deployments',
+          'https://api.github.com/repos/flex-development/flautoreview/deployments',
         description: null,
         disabled: false,
         downloads_url:
-          'https://api.github.com/repos/flex-development/autoreview/downloads',
+          'https://api.github.com/repos/flex-development/flautoreview/downloads',
         events_url:
-          'https://api.github.com/repos/flex-development/autoreview/events',
+          'https://api.github.com/repos/flex-development/flautoreview/events',
         fork: false,
         forks: 0,
         forks_count: 0,
         forks_url:
-          'https://api.github.com/repos/flex-development/autoreview/forks',
-        full_name: 'flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/forks',
+        full_name: 'flex-development/flautoreview',
         git_commits_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/commits{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/commits{/sha}',
         git_refs_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/refs{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/refs{/sha}',
         git_tags_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/tags{/sha}',
-        git_url: 'git://github.com/flex-development/autoreview.git',
+          'https://api.github.com/repos/flex-development/flautoreview/git/tags{/sha}',
+        git_url: 'git://github.com/flex-development/flautoreview.git',
         has_downloads: true,
         has_issues: true,
         has_pages: true,
@@ -286,32 +286,32 @@ export default {
         has_wiki: true,
         homepage: null,
         hooks_url:
-          'https://api.github.com/repos/flex-development/autoreview/hooks',
-        html_url: 'https://github.com/flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/hooks',
+        html_url: 'https://github.com/flex-development/flautoreview',
         id: 186853002,
         issue_comment_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues/comments{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues/comments{/number}',
         issue_events_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues/events{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues/events{/number}',
         issues_url:
-          'https://api.github.com/repos/flex-development/autoreview/issues{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/issues{/number}',
         keys_url:
-          'https://api.github.com/repos/flex-development/autoreview/keys{/key_id}',
+          'https://api.github.com/repos/flex-development/flautoreview/keys{/key_id}',
         labels_url:
-          'https://api.github.com/repos/flex-development/autoreview/labels{/name}',
+          'https://api.github.com/repos/flex-development/flautoreview/labels{/name}',
         language: null,
         languages_url:
-          'https://api.github.com/repos/flex-development/autoreview/languages',
+          'https://api.github.com/repos/flex-development/flautoreview/languages',
         license: null,
         merges_url:
-          'https://api.github.com/repos/flex-development/autoreview/merges',
+          'https://api.github.com/repos/flex-development/flautoreview/merges',
         milestones_url:
-          'https://api.github.com/repos/flex-development/autoreview/milestones{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/milestones{/number}',
         mirror_url: null,
-        name: 'autoreview',
+        name: 'flautoreview',
         node_id: `${faker.datatype.string(12)}=`,
         notifications_url:
-          'https://api.github.com/repos/flex-development/autoreview/notifications{?since,all,participating}',
+          'https://api.github.com/repos/flex-development/flautoreview/notifications{?since,all,participating}',
         open_issues: 2,
         open_issues_count: 2,
         owner: {
@@ -344,30 +344,30 @@ export default {
         },
         private: false,
         pulls_url:
-          'https://api.github.com/repos/flex-development/autoreview/pulls{/number}',
+          'https://api.github.com/repos/flex-development/flautoreview/pulls{/number}',
         pushed_at: '2019-05-15T15:20:32Z',
         releases_url:
-          'https://api.github.com/repos/flex-development/autoreview/releases{/id}',
+          'https://api.github.com/repos/flex-development/flautoreview/releases{/id}',
         size: 0,
-        ssh_url: 'git@github.com:flex-development/autoreview.git',
+        ssh_url: 'git@github.com:flex-development/flautoreview.git',
         stargazers_count: 0,
         stargazers_url:
-          'https://api.github.com/repos/flex-development/autoreview/stargazers',
+          'https://api.github.com/repos/flex-development/flautoreview/stargazers',
         statuses_url:
-          'https://api.github.com/repos/flex-development/autoreview/statuses/{sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/statuses/{sha}',
         subscribers_url:
-          'https://api.github.com/repos/flex-development/autoreview/subscribers',
+          'https://api.github.com/repos/flex-development/flautoreview/subscribers',
         subscription_url:
-          'https://api.github.com/repos/flex-development/autoreview/subscription',
-        svn_url: 'https://github.com/flex-development/autoreview',
+          'https://api.github.com/repos/flex-development/flautoreview/subscription',
+        svn_url: 'https://github.com/flex-development/flautoreview',
         tags_url:
-          'https://api.github.com/repos/flex-development/autoreview/tags',
+          'https://api.github.com/repos/flex-development/flautoreview/tags',
         teams_url:
-          'https://api.github.com/repos/flex-development/autoreview/teams',
+          'https://api.github.com/repos/flex-development/flautoreview/teams',
         trees_url:
-          'https://api.github.com/repos/flex-development/autoreview/git/trees{/sha}',
+          'https://api.github.com/repos/flex-development/flautoreview/git/trees{/sha}',
         updated_at: '2019-05-15T15:19:27Z',
-        url: 'https://api.github.com/repos/flex-development/autoreview',
+        url: 'https://api.github.com/repos/flex-development/flautoreview',
         watchers: 0,
         watchers_count: 0
       },
@@ -400,10 +400,10 @@ export default {
         url: 'https://api.github.com/users/flex-development'
       }
     },
-    html_url: 'https://github.com/flex-development/autoreview/pull/2',
+    html_url: 'https://github.com/flex-development/flautoreview/pull/2',
     id: 279147437,
     issue_url:
-      'https://api.github.com/repos/flex-development/autoreview/issues/2',
+      'https://api.github.com/repos/flex-development/flautoreview/issues/2',
     labels: [],
     locked: false,
     maintainer_can_modify: false,
@@ -416,21 +416,21 @@ export default {
     milestone: null,
     node_id: `${faker.datatype.string(12)}=`,
     number: 2,
-    patch_url: 'https://github.com/flex-development/autoreview/pull/2.patch',
+    patch_url: 'https://github.com/flex-development/flautoreview/pull/2.patch',
     rebaseable: null,
     requested_reviewers: [],
     requested_teams: [],
     review_comment_url:
-      'https://api.github.com/repos/flex-development/autoreview/pulls/comments{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/pulls/comments{/number}',
     review_comments: 0,
     review_comments_url:
-      'https://api.github.com/repos/flex-development/autoreview/pulls/2/comments',
+      'https://api.github.com/repos/flex-development/flautoreview/pulls/2/comments',
     state: 'open',
     statuses_url:
-      'https://api.github.com/repos/flex-development/autoreview/statuses/ec26c3e57ca3a959ca5aad62de7213c562f8c821',
+      'https://api.github.com/repos/flex-development/flautoreview/statuses/ec26c3e57ca3a959ca5aad62de7213c562f8c821',
     title: 'Update the README with new information.',
     updated_at: '2019-05-15T15:20:33Z',
-    url: 'https://api.github.com/repos/flex-development/autoreview/pulls/2',
+    url: 'https://api.github.com/repos/flex-development/flautoreview/pulls/2',
     user: {
       avatar_url: 'https://avatars1.githubusercontent.com/u/21031067?v=4',
       events_url:
@@ -460,81 +460,83 @@ export default {
   },
   repository: {
     archive_url:
-      'https://api.github.com/repos/flex-development/autoreview/{archive_format}{/ref}',
+      'https://api.github.com/repos/flex-development/flautoreview/{archive_format}{/ref}',
     archived: false,
     assignees_url:
-      'https://api.github.com/repos/flex-development/autoreview/assignees{/user}',
+      'https://api.github.com/repos/flex-development/flautoreview/assignees{/user}',
     blobs_url:
-      'https://api.github.com/repos/flex-development/autoreview/git/blobs{/sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/git/blobs{/sha}',
     branches_url:
-      'https://api.github.com/repos/flex-development/autoreview/branches{/branch}',
-    clone_url: 'https://github.com/flex-development/autoreview.git',
+      'https://api.github.com/repos/flex-development/flautoreview/branches{/branch}',
+    clone_url: 'https://github.com/flex-development/flautoreview.git',
     collaborators_url:
-      'https://api.github.com/repos/flex-development/autoreview/collaborators{/collaborator}',
+      'https://api.github.com/repos/flex-development/flautoreview/collaborators{/collaborator}',
     comments_url:
-      'https://api.github.com/repos/flex-development/autoreview/comments{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/comments{/number}',
     commits_url:
-      'https://api.github.com/repos/flex-development/autoreview/commits{/sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/commits{/sha}',
     compare_url:
-      'https://api.github.com/repos/flex-development/autoreview/compare/{base}...{head}',
+      'https://api.github.com/repos/flex-development/flautoreview/compare/{base}...{head}',
     contents_url:
-      'https://api.github.com/repos/flex-development/autoreview/contents/{+path}',
+      'https://api.github.com/repos/flex-development/flautoreview/contents/{+path}',
     contributors_url:
-      'https://api.github.com/repos/flex-development/autoreview/contributors',
+      'https://api.github.com/repos/flex-development/flautoreview/contributors',
     created_at: '2019-05-15T15:19:25Z',
     default_branch: 'master',
     deployments_url:
-      'https://api.github.com/repos/flex-development/autoreview/deployments',
+      'https://api.github.com/repos/flex-development/flautoreview/deployments',
     description: null,
     disabled: false,
     downloads_url:
-      'https://api.github.com/repos/flex-development/autoreview/downloads',
+      'https://api.github.com/repos/flex-development/flautoreview/downloads',
     events_url:
-      'https://api.github.com/repos/flex-development/autoreview/events',
+      'https://api.github.com/repos/flex-development/flautoreview/events',
     fork: false,
     forks: 0,
     forks_count: 0,
-    forks_url: 'https://api.github.com/repos/flex-development/autoreview/forks',
-    full_name: 'flex-development/autoreview',
+    forks_url:
+      'https://api.github.com/repos/flex-development/flautoreview/forks',
+    full_name: 'flex-development/flautoreview',
     git_commits_url:
-      'https://api.github.com/repos/flex-development/autoreview/git/commits{/sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/git/commits{/sha}',
     git_refs_url:
-      'https://api.github.com/repos/flex-development/autoreview/git/refs{/sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/git/refs{/sha}',
     git_tags_url:
-      'https://api.github.com/repos/flex-development/autoreview/git/tags{/sha}',
-    git_url: 'git://github.com/flex-development/autoreview.git',
+      'https://api.github.com/repos/flex-development/flautoreview/git/tags{/sha}',
+    git_url: 'git://github.com/flex-development/flautoreview.git',
     has_downloads: true,
     has_issues: true,
     has_pages: true,
     has_projects: true,
     has_wiki: true,
     homepage: null,
-    hooks_url: 'https://api.github.com/repos/flex-development/autoreview/hooks',
-    html_url: 'https://github.com/flex-development/autoreview',
+    hooks_url:
+      'https://api.github.com/repos/flex-development/flautoreview/hooks',
+    html_url: 'https://github.com/flex-development/flautoreview',
     id: 186853002,
     issue_comment_url:
-      'https://api.github.com/repos/flex-development/autoreview/issues/comments{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/issues/comments{/number}',
     issue_events_url:
-      'https://api.github.com/repos/flex-development/autoreview/issues/events{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/issues/events{/number}',
     issues_url:
-      'https://api.github.com/repos/flex-development/autoreview/issues{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/issues{/number}',
     keys_url:
-      'https://api.github.com/repos/flex-development/autoreview/keys{/key_id}',
+      'https://api.github.com/repos/flex-development/flautoreview/keys{/key_id}',
     labels_url:
-      'https://api.github.com/repos/flex-development/autoreview/labels{/name}',
+      'https://api.github.com/repos/flex-development/flautoreview/labels{/name}',
     language: null,
     languages_url:
-      'https://api.github.com/repos/flex-development/autoreview/languages',
+      'https://api.github.com/repos/flex-development/flautoreview/languages',
     license: null,
     merges_url:
-      'https://api.github.com/repos/flex-development/autoreview/merges',
+      'https://api.github.com/repos/flex-development/flautoreview/merges',
     milestones_url:
-      'https://api.github.com/repos/flex-development/autoreview/milestones{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/milestones{/number}',
     mirror_url: null,
-    name: 'autoreview',
+    name: 'flautoreview',
     node_id: `${faker.datatype.string(12)}=`,
     notifications_url:
-      'https://api.github.com/repos/flex-development/autoreview/notifications{?since,all,participating}',
+      'https://api.github.com/repos/flex-development/flautoreview/notifications{?since,all,participating}',
     open_issues: 2,
     open_issues_count: 2,
     owner: {
@@ -565,28 +567,29 @@ export default {
     },
     private: false,
     pulls_url:
-      'https://api.github.com/repos/flex-development/autoreview/pulls{/number}',
+      'https://api.github.com/repos/flex-development/flautoreview/pulls{/number}',
     pushed_at: '2019-05-15T15:20:32Z',
     releases_url:
-      'https://api.github.com/repos/flex-development/autoreview/releases{/id}',
+      'https://api.github.com/repos/flex-development/flautoreview/releases{/id}',
     size: 0,
-    ssh_url: 'git@github.com:flex-development/autoreview.git',
+    ssh_url: 'git@github.com:flex-development/flautoreview.git',
     stargazers_count: 0,
     stargazers_url:
-      'https://api.github.com/repos/flex-development/autoreview/stargazers',
+      'https://api.github.com/repos/flex-development/flautoreview/stargazers',
     statuses_url:
-      'https://api.github.com/repos/flex-development/autoreview/statuses/{sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/statuses/{sha}',
     subscribers_url:
-      'https://api.github.com/repos/flex-development/autoreview/subscribers',
+      'https://api.github.com/repos/flex-development/flautoreview/subscribers',
     subscription_url:
-      'https://api.github.com/repos/flex-development/autoreview/subscription',
-    svn_url: 'https://github.com/flex-development/autoreview',
-    tags_url: 'https://api.github.com/repos/flex-development/autoreview/tags',
-    teams_url: 'https://api.github.com/repos/flex-development/autoreview/teams',
+      'https://api.github.com/repos/flex-development/flautoreview/subscription',
+    svn_url: 'https://github.com/flex-development/flautoreview',
+    tags_url: 'https://api.github.com/repos/flex-development/flautoreview/tags',
+    teams_url:
+      'https://api.github.com/repos/flex-development/flautoreview/teams',
     trees_url:
-      'https://api.github.com/repos/flex-development/autoreview/git/trees{/sha}',
+      'https://api.github.com/repos/flex-development/flautoreview/git/trees{/sha}',
     updated_at: '2019-05-15T15:19:27Z',
-    url: 'https://api.github.com/repos/flex-development/autoreview',
+    url: 'https://api.github.com/repos/flex-development/flautoreview',
     watchers: 0,
     watchers_count: 0
   },
