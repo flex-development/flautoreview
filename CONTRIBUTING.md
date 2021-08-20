@@ -349,8 +349,8 @@ Before cutting a new release, the following steps must be completed:
 
 1. Schedule a code freeze
 2. Create a new `release/*` branch
-   - where `*` is `<package.json#name-no-scope>@<x>.<x>.<x>`, e.g:
-     `autoreview@1.0.0`
+   - where `*` is `<package.json#name-no-scope>@v<x>.<x>.<x>`, e.g:
+     `autoreview@v1.0.0`
    - branch naming conventions **must be followed exactly**. the continuous
      deployment workflow uses the branch name to determine which github release
      to publish
@@ -362,8 +362,8 @@ Before cutting a new release, the following steps must be completed:
      - `yarn release --release-as patch`
    - a new release will be drafted
 4. Open a new pull request from `release/*` into `next`
-   - title the PR `release: <package.json#name-no-scope>@<x>.<x>.<x>`, e.g:
-     `release: autoreview@1.0.0`
+   - title the PR `release: <package.json#name-no-scope>@v<x>.<x>.<x>`, e.g:
+     `release: autoreview@v1.0.0`
    - once the PR is **approved**, the continuous deployment workflow will be
      triggered
 
