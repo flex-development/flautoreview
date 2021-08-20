@@ -337,42 +337,16 @@ e.g: `merge: P011-1 (#1)`
 
 ## Releasing
 
-This repository is configured to publish a GitHub release when a `release/*`
-branch pull request is approved.
-
-> Note: Publishing is executed via the
-> [Continuous Deployment](./.github/workflows/continous-deployment.yml)
-> workflow. This is so invalid or malicious versions cannot be released by any
-> maintainer without merging those changes into `next` first.
-
-Before cutting a new release, the following steps must be completed:
-
-1. Schedule a code freeze
-2. Create a new `release/*` branch
-   - where `*` is `<package.json#name-no-scope>@v<x>.<x>.<x>`, e.g:
-     `autoreview@v1.0.0`
-   - branch naming conventions **must be followed exactly**. the continuous
-     deployment workflow uses the branch name to determine which github release
-     to publish
-3. Decide what version bump the release needs (major, minor, patch)
+1. Decide what version bump the release needs (major, minor, patch)
    - versioning
      - `yarn release` (determines [bumps based on commits][15])
      - `yarn release --release-as major`
      - `yarn release --release-as minor`
      - `yarn release --release-as patch`
    - a new release will be drafted
-4. Open a new pull request from `release/*` into `next`
-   - title the PR `release: <package.json#name-no-scope>@v<x>.<x>.<x>`, e.g:
-     `release: autoreview@v1.0.0`
-   - once the PR is **approved**, the continuous deployment workflow will be
-     triggered
-
-If the Continous Deployment workflow completes successfully, it will:
-
-- publish release for `<tag-prefix>@<x>.<x>.<x>`
-- merge branch `release/*` into `next`, and `next` into `main`
-- close issues with the `status:merged` label
-- add the `status:released` label to newly closed issues
+2. Close issues with the `status:merged` label
+3. Add the `status:released` label to newly closed issues
+4. Publish release
 
 [1]: https://www.atlassian.com/software/jira
 [2]: https://yarnpkg.com/getting-started/migration

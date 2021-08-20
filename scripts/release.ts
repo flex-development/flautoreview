@@ -140,6 +140,7 @@ const options: IGreaseOptions = {
   scripts: {
     postchangelog: `yarn pack -o %s-%v.tgz${argv.dryRun ? ' -n' : ''}`,
     postgreaser: 'rimraf ./*.tgz',
+    postrelease: 'git chp next; git rebase origin/main; git pnv',
     posttag: `git push --follow-tags origin ${$branch} --no-verify`,
     prerelease: 'yarn test --no-cache'
   },
