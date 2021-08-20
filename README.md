@@ -8,18 +8,87 @@ GitHub Action to automate pull request reviews
 
 ## Overview
 
-[🚧 Usage](#usage)  
+[Usage](#usage)  
 [Built With](#built-with)  
 [Contributing](CONTRIBUTING.md)
 
 ## Usage
 
-**TODO**: Update documentation.
+Do you work alone? Do you request reviews from your admin account? Is switching
+between accounts becoming a hassle? Geared towards lone developers, this action
+speeds up your pull request workflow by allowing you to automate reviews.
+
+```yaml
+name: Automate PR Reviews
+on:
+  pull_request:
+    types: [review_requested]
+jobs:
+  automate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: @flex-development/autoreview@v1.0.0
+        with:
+          body: lgtm 👍🏾
+          reviewers:  flexdevelopment
+          senders: unicornware
+```
+
+### Options
+
+```typescript
+/**
+ * Action options.
+ *
+ * @see https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+ */
+export interface Inputs {
+  /**
+   * Body text of pull request review.
+   *
+   * **Required** if:
+   *
+   * - `event === ReviewEvent.COMMENT`
+   * - `event === ReviewEvent.REQUEST_CHANGES`
+   */
+  body?: string
+
+  /**
+   * Automated review action to perform.
+   *
+   * @default ReviewEvent.APPROVE
+   */
+  event?: ReviewEvent
+
+  /**
+   * List of user logins and/or team slugs to automate reviews on behalf of;
+   * e.g: `'flexdevelopment,team-autoreview'`.
+   *
+   * If `undefined` or an empty string, a warning will be logged and the action
+   * will exit without failing.
+   */
+  reviewers?: string
+
+  /**
+   * List of users allowed to receive automated reviews; e.g: `'unicornware'`.
+   *
+   * If an empty string, a warning will be logged and the action will exit
+   * without failing.
+   */
+  senders?: string
+
+  /**
+   * GitHub [Personal Access Token][1] with repository access.
+   *
+   * [1]: https://github.com/settings/tokens/new
+   */
+  token: string
+}
+```
 
 ## Built With
 
-- [`@actions/core`][1] - Core GitHub Actions functions for setting results,
-  logging, registering secrets and exporting variables across actions
+- [`@actions/core`][1] - Core GitHub Actions functions
 - [`@actions/github`][2] - GitHub Actions [Octokit][3] client
 
 [1]: https://github.com/actions/toolkit/tree/master/packages/core

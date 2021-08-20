@@ -8,14 +8,16 @@ import { ReviewEvent } from '@autoreview/enums/review-event.enum'
 /**
  * Action options.
  *
- * @see https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+ * @see https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions#inputs
  */
 export interface Inputs {
   /**
-   * Body text of pull request review. **Required** if:
+   * Body text of pull request review.
+   *
+   * **Required** if:
    *
    * - `event === ReviewEvent.COMMENT`
-   * - `event === ReviewEvent.REQUEST_CHANGES`.
+   * - `event === ReviewEvent.REQUEST_CHANGES`
    */
   body?: string
 
@@ -28,19 +30,25 @@ export interface Inputs {
 
   /**
    * List of user logins and/or team slugs to automate reviews on behalf of;
-   * e.g: `'flexdevelopment,dependabot'`.
+   * e.g: `'flexdevelopment,team-autoreview'`.
    *
-   * @default ''
+   * If `undefined` or an empty string, a warning will be logged and the action
+   * will exit without failing.
    */
   reviewers?: string
 
   /**
-   * List of users allowed to receive automated reviews e.g: `'unicornware'`.
+   * List of users allowed to receive automated reviews; e.g: `'unicornware'`.
+   *
+   * If an empty string, a warning will be logged and the action will exit
+   * without failing.
    */
   senders?: string
 
   /**
    * GitHub [Personal Access Token][1] with repository access.
+   *
+   * [1]: https://github.com/settings/tokens/new
    */
   token: string
 }

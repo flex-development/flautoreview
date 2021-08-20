@@ -23,7 +23,7 @@ export type CreateReviewResponse =
  * Object representing a webhook payload [pull_request][1] when a review is
  * requested from a user or team.
  *
- * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+ * [1]: https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
 export type WebhookPayloadAutomatable =
   | WebhookPayloadAutomatableTeam
@@ -33,7 +33,7 @@ export type WebhookPayloadAutomatable =
  * Object representing a webhook payload [pull_request][1] when a review is
  * requested from a team.
  *
- * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+ * [1]: https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
 export type WebhookPayloadAutomatableTeam = {
   action: 'review_requested'
@@ -50,7 +50,7 @@ export type WebhookPayloadAutomatableTeam = {
  * Object representing a webhook payload [pull_request][1] when a review is
  * requested from a user.
  *
- * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+ * [1]: https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
 export type WebhookPayloadAutomatableUser = {
   action: 'review_requested'

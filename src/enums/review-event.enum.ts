@@ -6,7 +6,7 @@
 /**
  * Pull request review actions.
  *
- * @see https://docs.github.com/en/rest/reference/pulls#create-a-review-for-a-pull-request--parameters
+ * @see https://docs.github.com/rest/reference/pulls#create-a-review-for-a-pull-request--parameters
  */
 export enum ReviewEvent {
   APPROVE = 'APPROVE',
