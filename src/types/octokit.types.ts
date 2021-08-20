@@ -25,9 +25,9 @@ export type CreateReviewResponse =
  *
  * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
-export type WebhookPayloadReviewRequested =
-  | WebhookPayloadReviewRequestedTeam
-  | WebhookPayloadReviewRequestedUser
+export type WebhookPayloadAutomatable =
+  | WebhookPayloadAutomatableTeam
+  | WebhookPayloadAutomatableUser
 
 /**
  * Object representing a webhook payload [pull_request][1] when a review is
@@ -35,7 +35,7 @@ export type WebhookPayloadReviewRequested =
  *
  * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
-export type WebhookPayloadReviewRequestedTeam = {
+export type WebhookPayloadAutomatableTeam = {
   action: 'review_requested'
   installation?: InstallationLite
   number: number
@@ -52,7 +52,7 @@ export type WebhookPayloadReviewRequestedTeam = {
  *
  * [1]: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
  */
-export type WebhookPayloadReviewRequestedUser = {
+export type WebhookPayloadAutomatableUser = {
   action: 'review_requested'
   installation?: InstallationLite
   number: number
@@ -62,6 +62,3 @@ export type WebhookPayloadReviewRequestedUser = {
   requested_reviewer: User
   sender: User
 }
-
-// Rename `@octokit/webhooks-definitions/schema` type definitions
-export type { Schema as WebhookPayload } from '@octokit/webhooks-definitions/schema'

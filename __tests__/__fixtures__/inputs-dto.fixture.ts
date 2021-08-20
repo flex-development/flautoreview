@@ -1,4 +1,3 @@
-import { ReviewEvent } from '@autoreview/enums/review-event.enum'
 import type { Inputs } from '@autoreview/interfaces'
 
 /**
@@ -8,7 +7,6 @@ import type { Inputs } from '@autoreview/interfaces'
 
 export default {
   body: 'lgtm 👍🏾',
-  event: ReviewEvent.APPROVE,
   reviewers: 'flexdevelopment',
   senders: 'unicornware',
   token: 'token'

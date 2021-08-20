@@ -2,7 +2,7 @@ import github from '@actions/github'
 import type { GitHub } from '@actions/github/lib/utils'
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'
-import type { WebhookPayloadReviewRequested } from '@autoreview/types'
+import type { WebhookPayloadAutomatable } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import INPUTS from '@tests/fixtures/inputs-dto.fixture'
@@ -51,14 +51,14 @@ describe('unit:utils/createReview', () => {
   describe('throws', () => {
     type Case = TestcaseThrows & {
       inputs: Inputs
-      payload: WebhookPayloadReviewRequested
+      payload: WebhookPayloadAutomatable
     }
 
     const cases: Case[] = [
       {
         expected: {
           code: ExceptionStatusCode.PRECONDITION_FAILED,
-          data: { level: ExceptionLevel.WARN },
+          data: { level: ExceptionLevel.INFO },
           errors: { reviewers: 'user' },
           message: `${USER.requested_reviewer.login} cannot automate reviews`
         },
@@ -69,7 +69,7 @@ describe('unit:utils/createReview', () => {
       {
         expected: {
           code: ExceptionStatusCode.PRECONDITION_FAILED,
-          data: { level: ExceptionLevel.WARN },
+          data: { level: ExceptionLevel.INFO },
           errors: { senders: 'senders' },
           message: `${USER.sender.login} cannot receive automated reviews`
         },

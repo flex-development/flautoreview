@@ -10,8 +10,7 @@ import type { Inputs } from '@autoreview/interfaces'
  * @property {Partial<Inputs>} DEFAULT_INPUTS - Default action inputs
  */
 const DEFAULT_INPUTS: Partial<Inputs> = {
-  event: ReviewEvent.APPROVE,
-  reviewers: ''
+  event: ReviewEvent.APPROVE
 }
 
 export default DEFAULT_INPUTS

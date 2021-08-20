@@ -125,6 +125,7 @@ const RULES = {
         'formatter',
         'keyof',
         'lgtm',
+        'multiline',
         'ncc',
         'nullish',
         'octokit',

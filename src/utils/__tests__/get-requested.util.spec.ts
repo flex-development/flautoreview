@@ -1,5 +1,5 @@
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { WebhookPayloadReviewRequested } from '@autoreview/types'
+import type { WebhookPayloadAutomatable } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import USER from '@tests/fixtures/pr-event-with-requested-reviewer.fixture'
@@ -15,7 +15,7 @@ import testSubject from '../get-requested.util'
 describe('unit:utils/getRequested', () => {
   describe('returns', () => {
     type Case = Testcase<string> & {
-      payload: WebhookPayloadReviewRequested
+      payload: WebhookPayloadAutomatable
       property: 'requested_reviewer.login' | 'requested_team.slug'
     }
 
@@ -42,7 +42,7 @@ describe('unit:utils/getRequested', () => {
   })
 
   describe('throws', () => {
-    type Case = TestcaseThrows & { payload: WebhookPayloadReviewRequested }
+    type Case = TestcaseThrows & { payload: WebhookPayloadAutomatable }
 
     const cases: Case[] = [
       {

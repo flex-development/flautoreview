@@ -1,5 +1,5 @@
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
-import type { WebhookPayloadReviewRequested } from '@autoreview/types'
+import type { WebhookPayloadAutomatable } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
 import type { ObjectPlain } from '@flex-development/tutils'
@@ -12,11 +12,11 @@ import type { ObjectPlain } from '@flex-development/tutils'
 /**
  * Returns the user login or team slug of a pull request's requested reviewer.
  *
- * @param {WebhookPayloadReviewRequested} payload - Webhook payload event
+ * @param {WebhookPayloadAutomatable} payload - Webhook payload event
  * @return {string} User login or team slug
  * @throws {Exception}
  */
-const getRequested = (payload: WebhookPayloadReviewRequested): string => {
+const getRequested = (payload: WebhookPayloadAutomatable): string => {
   const { requested_reviewer, requested_team } = payload as ObjectPlain
 
   const requested = requested_reviewer?.login ?? requested_team?.slug

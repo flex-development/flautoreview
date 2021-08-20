@@ -1,4 +1,4 @@
-import type { WebhookPayloadReviewRequestedUser } from '@autoreview/types'
+import type { WebhookPayloadAutomatableUser } from '@autoreview/types'
 import faker from 'faker'
 
 /**
@@ -637,4 +637,4 @@ export default {
     type: 'User',
     url: 'https://api.github.com/users/unicornware'
   }
-} as WebhookPayloadReviewRequestedUser
+} as WebhookPayloadAutomatableUser

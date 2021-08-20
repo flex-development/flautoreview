@@ -2,7 +2,7 @@ import github from '@actions/github'
 import DEFAULT_INPUTS from '@autoreview/config/defaults.config'
 import { ExceptionLevel } from '@autoreview/enums/exception-level.enum'
 import type { Inputs } from '@autoreview/interfaces'
-import type { WebhookPayloadReviewRequested } from '@autoreview/types'
+import type { WebhookPayloadAutomatable } from '@autoreview/types'
 import { CreateReviewResponse } from '@autoreview/types'
 import { ExceptionStatusCode } from '@flex-development/exceptions/enums'
 import Exception from '@flex-development/exceptions/exceptions/base.exception'
@@ -20,13 +20,14 @@ import getRequested from './get-requested.util'
  * Creates a new pull request review.
  *
  * @async
- * @param {WebhookPayloadReviewRequested} payload - Webhook payload event
+ * @param {WebhookPayloadAutomatable} payload - Webhook
+ * payload event data
  * @param {Inputs} inputs - Action inputs
  * @return {Promise<CreateReviewResponse>} Promise containing new review data
  * @throws {Exception}
  */
 const createReview = async (
-  payload: WebhookPayloadReviewRequested,
+  payload: WebhookPayloadAutomatable,
   inputs: Inputs
 ): Promise<CreateReviewResponse> => {
   try {
@@ -43,7 +44,7 @@ const createReview = async (
     if (!reviewer) {
       throw new Exception(ExceptionStatusCode.PRECONDITION_FAILED, undefined, {
         errors: { reviewers },
-        level: ExceptionLevel.WARN,
+        level: ExceptionLevel.INFO,
         message: `${requested} cannot automate reviews`
       })
     }
@@ -55,7 +56,7 @@ const createReview = async (
     if (senders && !sender) {
       throw new Exception(ExceptionStatusCode.PRECONDITION_FAILED, undefined, {
         errors: { senders },
-        level: ExceptionLevel.WARN,
+        level: ExceptionLevel.INFO,
         message: `${payload.sender.login} cannot receive automated reviews`
       })
     }

@@ -13,6 +13,17 @@ import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
  * @implements {Inputs}
  */
 export default class InputsDTO implements Inputs {
+  /**
+   * @property {(keyof Inputs)[]} PROPS - Data transfer object property names
+   */
+  static PROPS: (keyof Inputs)[] = [
+    'body',
+    'event',
+    'reviewers',
+    'senders',
+    'token'
+  ]
+
   @IsString()
   @IsNotEmpty()
   @IsOptional()
@@ -23,16 +34,14 @@ export default class InputsDTO implements Inputs {
   event?: Inputs['event']
 
   @IsString()
-  @IsNotEmpty()
   @IsOptional()
   reviewers?: Inputs['reviewers']
 
   @IsString()
-  @IsNotEmpty()
   @IsOptional()
   senders?: Inputs['senders']
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'GitHub personal access token required' })
   token: Inputs['token']
 }
