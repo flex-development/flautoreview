@@ -1,7 +1,7 @@
 {
   "name": "@flex-development/flautoreview",
   "description": "GitHub Action to automate pull request reviews",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "automation",
     "github actions typescript",
