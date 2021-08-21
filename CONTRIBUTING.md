@@ -158,7 +158,7 @@ When creating a new branch, the name should match the following format:
 For example:
 
 ```zsh
-git feat P011-1-repository-setup
+git chbf P011-1-repository-setup
 ```
 
 will create a new branch titled `feat/P011-1-repository-setup`.
