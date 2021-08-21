@@ -37,14 +37,14 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: flexdevelopment
-        uses: '@flex-development/flautoreview@v1.0.0'
+        uses: flex-development/flautoreview@v1.0.1
         with:
           body: lgtm 👍🏾
           reviewers: flexdevelopment
           senders: unicornware
           token: ${{ secrets.PAT_REPO_flexdevelopment }}
       - name: prbot
-        uses: '@flex-development/flautoreview@v1.0.0'
+        uses: flex-development/flautoreview@v1.0.1
         with:
           body: lgtm2 👍🏾
           reviewers: prbot
