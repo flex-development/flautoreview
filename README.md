@@ -1,16 +1,51 @@
-# :white_check_mark: flautoreview
+# :white_check_mark: flautoreview [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![TypeScript](https://badgen.net/badge/-/typescript?icon=typescript&label)](https://www.typescriptlang.org/) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-GitHub Action to automate pull request reviews
+**GitHub Action to automate pull request reviews**
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![TypeScript](https://badgen.net/badge/-/typescript?icon=typescript&label)](https://www.typescriptlang.org/)
-[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+> **:warning: THIS ACTION IS DEPRECATED. YOU DO NOT NEED IT. :warning:**\
+> **This action can be implemented in a single workflow using
+> [`actions/checkout`][3] and the [GitHub CLI][4].**
 
-## Overview
+```yaml
+# Approve Pull Request
+#
+# Automatically approve a pull request when a review is requested from @flexdevelopment by certain users.
+#
+#
+# References:
+#
+# - https://cli.github.com/manual/gh_pr_review
+# - https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#pull_request
+# - https://docs.github.com/actions/using-workflows/using-github-cli-in-workflows
+# - https://github.com/actions/checkout
 
-[Usage](#usage)  
-[Built With](#built-with)  
-[Contributing](CONTRIBUTING.md)
+---
+name: approve-pr
+on:
+  pull_request:
+    types:
+      - review_requested
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT_ADMIN }}
+jobs:
+  approve-pr:
+    if: github.event.requested_reviewer.login == 'flexdevelopment'
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout ${{ github.head_ref }}
+        uses: actions/checkout@v3.0.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.head_ref }}
+      - id: approve
+        name: Approve pull request
+        if: github.actor == 'unicornware' || github.actor == 'quickbrownfox'
+        run: gh pr review ${{ github.event.number }} --approve --body 'lgtm 👍🏾'
+```
+
+**Note**: Setting `env.GITHUB_TOKEN` to `${{ secrets.GITHUB_TOKEN }}` will
+result in the [`github-actions`][5] bot submitting reviews.
 
 ## Usage
 
@@ -55,7 +90,7 @@ jobs:
 See: [`.github/workflows/flautoreview.yml`](.github/workflows/flautoreview.yml)
 
 **Note**: Using `github.token`, the default `token` value, will result in the
-[`github-actions`][4] bot submitting reviews instead of the user or team listed
+[`github-actions`][5] bot submitting reviews instead of the user or team listed
 in `reviewers`.
 
 ### Options
@@ -124,5 +159,6 @@ export interface Inputs {
 
 [1]: https://github.com/actions/toolkit/tree/master/packages/core
 [2]: https://github.com/actions/toolkit/tree/master/packages/github
-[3]: https://octokit.github.io/rest.js/v18
-[4]: https://github.com/features/actions
+[3]: https://github.com/actions/checkout
+[4]: https://docs.github.com/actions/using-workflows/using-github-cli-in-workflows
+[5]: https://github.com/apps/github-actions
